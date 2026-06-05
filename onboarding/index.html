@@ -1,0 +1,1095 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Welcome — C7 Winners Forest Onboarding</title>
+  <meta name="description" content="Set up your C7 Winners account and enter your personalised dashboard." />
+  <meta name="robots" content="noindex,nofollow" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+  <style>
+    /* ─────────────────────────────────────────
+       DESIGN TOKENS  ── 4K Forest UNO Theme
+    ───────────────────────────────────────── */
+    :root {
+      --deep-pine:    #163828;
+      --forest:       #1F5D3B;
+      --moss:         #4E7A57;
+      --leaf:         #8DBF3F;
+      --gold:         #F4C95D;
+      --berry:        #D94B3D;
+      --sky:          #5CA9FF;
+      --mist:         #F6F8F2;
+      --card-bg:      rgba(22,56,40,0.72);
+      --card-border:  rgba(141,191,63,0.22);
+      --step-active:  var(--leaf);
+      --step-done:    var(--gold);
+      --step-idle:    rgba(255,255,255,0.12);
+      --radius-card:  24px;
+      --radius-btn:   14px;
+      --font-head:    'Space Grotesk', system-ui, sans-serif;
+      --font-body:    'Inter', system-ui, sans-serif;
+    }
+
+    /* ─────────────────── RESET ─────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      min-height: 100dvh;
+      background: var(--deep-pine);
+      color: var(--mist);
+      font-family: var(--font-body);
+      overflow-x: hidden;
+      overscroll-behavior: none;
+    }
+
+    /* ─────────────────── FOREST BACKGROUND ─────────────────── */
+    .bg-scene {
+      position: fixed; inset: 0; z-index: 0;
+      overflow: hidden; pointer-events: none;
+    }
+    .bg-gradient {
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 120% 80% at 20% 0%, #0d3d2c 0%, transparent 60%),
+        radial-gradient(ellipse 80% 60% at 80% 100%, #0a2e1e 0%, transparent 55%),
+        linear-gradient(180deg, #06231a 0%, #030f0a 100%);
+    }
+    .bg-orb {
+      position: absolute; border-radius: 50%;
+      filter: blur(80px); animation: orbFloat 12s ease-in-out infinite;
+    }
+    .bg-orb-1 { width: 520px; height: 520px; top: -140px; left: -140px; background: rgba(141,191,63,0.18); animation-delay: 0s; }
+    .bg-orb-2 { width: 600px; height: 600px; bottom: -160px; right: -160px; background: rgba(244,201,93,0.12); animation-delay: 4s; }
+    .bg-orb-3 { width: 360px; height: 360px; top: 40%; left: 60%; background: rgba(92,169,255,0.10); animation-delay: 8s; }
+    @keyframes orbFloat {
+      0%,100% { transform: translate(0,0) scale(1); }
+      33% { transform: translate(30px,-20px) scale(1.06); }
+      66% { transform: translate(-20px,30px) scale(0.95); }
+    }
+
+    /* Grid overlay */
+    .bg-grid {
+      position: absolute; inset: 0; opacity: 0.04;
+      background-image:
+        linear-gradient(rgba(141,191,63,0.7) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(141,191,63,0.7) 1px, transparent 1px);
+      background-size: 48px 48px;
+      mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+      -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+    }
+
+    /* Floating leaves */
+    .leaf { position: absolute; font-size: 1.3em; animation: leafDrift linear infinite; opacity: 0; pointer-events: none; }
+    @keyframes leafDrift {
+      0%   { transform: translateY(110vh) rotate(0deg) translateX(0); opacity: 0; }
+      5%   { opacity: 0.65; }
+      90%  { opacity: 0.45; }
+      100% { transform: translateY(-10vh) rotate(720deg) translateX(80px); opacity: 0; }
+    }
+
+    /* Fireflies */
+    .firefly {
+      position: absolute; border-radius: 50%;
+      width: 3px; height: 3px;
+      background: var(--gold);
+      box-shadow: 0 0 8px 2px var(--gold);
+      animation: fireflyBlink 3s ease-in-out infinite;
+    }
+    @keyframes fireflyBlink {
+      0%,100% { opacity: 0; transform: scale(1); }
+      50% { opacity: 0.9; transform: scale(1.5); }
+    }
+
+    /* ─────────────────── LAYOUT ─────────────────── */
+    .page-wrap {
+      position: relative; z-index: 1;
+      min-height: 100dvh;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      padding: 24px 20px 40px;
+    }
+
+    /* ─────────────────── HEADER BAR ─────────────────── */
+    .header-bar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+      height: 56px;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 24px;
+      background: rgba(6,35,26,0.85);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(141,191,63,0.12);
+    }
+    .logo {
+      display: flex; align-items: center; gap: 8px;
+      font-family: var(--font-head); font-weight: 800;
+      font-size: 1.1rem; color: var(--mist);
+      text-decoration: none;
+    }
+    .logo-badge {
+      width: 32px; height: 32px; border-radius: 8px;
+      background: linear-gradient(135deg, var(--leaf), var(--gold));
+      display: grid; place-items: center;
+      font-size: 0.75rem; font-weight: 800;
+      color: var(--deep-pine);
+      box-shadow: 0 0 16px rgba(141,191,63,0.5);
+    }
+    .skip-btn {
+      background: none; border: none; cursor: pointer;
+      font-size: 0.75rem; font-family: var(--font-body);
+      color: rgba(246,248,242,0.5);
+      transition: color 0.2s;
+      padding: 6px 10px;
+    }
+    .skip-btn:hover { color: var(--mist); }
+
+    /* ─────────────────── PROGRESS BAR ─────────────────── */
+    .progress-wrapper {
+      width: 100%; max-width: 580px;
+      margin-bottom: 28px; margin-top: 80px;
+    }
+    .progress-steps {
+      display: flex; gap: 6px; align-items: center;
+    }
+    .step-track {
+      flex: 1; display: flex; flex-direction: column; gap: 4px;
+    }
+    .step-bar {
+      height: 4px; border-radius: 4px;
+      background: var(--step-idle);
+      transition: background 0.4s ease, box-shadow 0.4s ease;
+    }
+    .step-bar.done    { background: var(--step-done); }
+    .step-bar.active  {
+      background: var(--step-active);
+      box-shadow: 0 0 10px rgba(141,191,63,0.7);
+    }
+    .step-label {
+      font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.18em;
+      color: rgba(246,248,242,0.35);
+      transition: color 0.3s;
+      white-space: nowrap;
+    }
+    .step-label.active { color: var(--leaf); }
+    .step-label.done   { color: var(--gold); }
+
+    /* ─────────────────── MAIN CARD ─────────────────── */
+    .onboarding-card {
+      width: 100%; max-width: 580px;
+      border-radius: var(--radius-card);
+      background: var(--card-bg);
+      backdrop-filter: blur(24px);
+      border: 1px solid var(--card-border);
+      box-shadow:
+        0 32px 80px -20px rgba(0,0,0,0.8),
+        inset 0 1px 0 rgba(255,255,255,0.06);
+      overflow: hidden;
+      position: relative;
+    }
+    .card-glow-top {
+      position: absolute; top: 0; left: 0; right: 0; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--leaf), transparent);
+      opacity: 0.7;
+    }
+    .card-body {
+      padding: 36px 40px 40px;
+      min-height: 400px;
+      display: flex; flex-direction: column;
+    }
+    @media (max-width: 520px) {
+      .card-body { padding: 28px 22px 28px; }
+    }
+
+    /* ─────────────────── STEP PANELS ─────────────────── */
+    .step-panel {
+      display: none; flex-direction: column; gap: 20px;
+      animation: stepIn 0.4s cubic-bezier(0.22,1,0.36,1) both;
+      flex: 1;
+    }
+    .step-panel.visible { display: flex; }
+    @keyframes stepIn {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes stepOut {
+      from { opacity: 1; transform: translateY(0); }
+      to   { opacity: 0; transform: translateY(-18px); }
+    }
+    .step-panel.leaving { animation: stepOut 0.25s ease both; }
+
+    /* Heading */
+    .step-eyebrow {
+      font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.3em;
+      color: var(--leaf); font-family: var(--font-head); font-weight: 600;
+      display: flex; align-items: center; gap: 6px;
+    }
+    .step-eyebrow::before {
+      content: ''; display: block;
+      width: 20px; height: 2px;
+      background: linear-gradient(90deg, var(--leaf), transparent);
+      border-radius: 2px;
+    }
+    .step-title {
+      font-family: var(--font-head); font-size: clamp(1.6rem, 4vw, 2.2rem);
+      font-weight: 800; line-height: 1.15;
+      color: var(--mist);
+    }
+    .step-title .gold-text { color: var(--gold); }
+    .step-title .leaf-text { color: var(--leaf); }
+    .step-body-text {
+      font-size: 0.9rem; color: rgba(246,248,242,0.65);
+      line-height: 1.65;
+    }
+
+    /* ─────────────────── BUTTONS ─────────────────── */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      gap: 8px; border: none; cursor: pointer;
+      font-family: var(--font-head); font-weight: 700;
+      border-radius: var(--radius-btn);
+      transition: all 0.2s cubic-bezier(0.34,1.56,0.64,1);
+      white-space: nowrap;
+      text-decoration: none;
+      position: relative; overflow: hidden;
+    }
+    .btn::after {
+      content: ''; position: absolute; inset: 0;
+      background: white; opacity: 0;
+      transition: opacity 0.15s;
+    }
+    .btn:hover::after  { opacity: 0.07; }
+    .btn:active::after { opacity: 0.14; }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--leaf) 0%, #6ba832 100%);
+      color: var(--deep-pine);
+      font-size: 0.95rem; padding: 14px 28px;
+      box-shadow: 0 4px 20px rgba(141,191,63,0.4), 0 1px 0 rgba(255,255,255,0.15) inset;
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(141,191,63,0.55);
+    }
+    .btn-primary:active { transform: translateY(0); }
+
+    .btn-gold {
+      background: linear-gradient(135deg, var(--gold) 0%, #e0a830 100%);
+      color: var(--deep-pine);
+      font-size: 0.95rem; padding: 14px 28px;
+      box-shadow: 0 4px 20px rgba(244,201,93,0.4);
+    }
+    .btn-gold:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(244,201,93,0.55);
+    }
+
+    .btn-ghost {
+      background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.10);
+      color: rgba(246,248,242,0.70);
+      font-size: 0.88rem; padding: 12px 20px;
+    }
+    .btn-ghost:hover { background: rgba(255,255,255,0.10); color: var(--mist); }
+
+    .btn-full { width: 100%; }
+    .btn-lg   { font-size: 1.05rem; padding: 16px 32px; }
+
+    /* ─────────────────── FORM ELEMENTS ─────────────────── */
+    .form-group { display: flex; flex-direction: column; gap: 6px; }
+    .form-label {
+      font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.2em;
+      color: rgba(246,248,242,0.5); font-family: var(--font-head); font-weight: 600;
+    }
+    .form-input {
+      width: 100%; padding: 13px 16px;
+      background: rgba(6,35,26,0.6); border: 1px solid rgba(141,191,63,0.2);
+      border-radius: 12px; color: var(--mist);
+      font-family: var(--font-body); font-size: 0.95rem;
+      outline: none; transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .form-input::placeholder { color: rgba(246,248,242,0.3); }
+    .form-input:focus {
+      border-color: rgba(141,191,63,0.6);
+      box-shadow: 0 0 0 3px rgba(141,191,63,0.15);
+    }
+
+    /* ─────────────────── STEP 1: WELCOME ─────────────────── */
+    .welcome-icon {
+      width: 72px; height: 72px; border-radius: 20px;
+      background: linear-gradient(135deg, var(--forest), var(--deep-pine));
+      border: 1px solid rgba(141,191,63,0.3);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2rem;
+      box-shadow: 0 0 40px rgba(141,191,63,0.25);
+      animation: iconGlow 3s ease-in-out infinite alternate;
+    }
+    @keyframes iconGlow {
+      from { box-shadow: 0 0 30px rgba(141,191,63,0.2); }
+      to   { box-shadow: 0 0 55px rgba(141,191,63,0.45); }
+    }
+
+    .feature-pills {
+      display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px;
+    }
+    .pill {
+      display: inline-flex; align-items: center; gap: 5px;
+      padding: 6px 12px; border-radius: 999px;
+      font-size: 0.75rem; font-family: var(--font-head); font-weight: 600;
+      border: 1px solid;
+    }
+    .pill-green { background: rgba(141,191,63,0.12); border-color: rgba(141,191,63,0.25); color: var(--leaf); }
+    .pill-gold  { background: rgba(244,201,93,0.10); border-color: rgba(244,201,93,0.25); color: var(--gold); }
+    .pill-sky   { background: rgba(92,169,255,0.10); border-color: rgba(92,169,255,0.25); color: var(--sky); }
+
+    /* ─────────────────── STEP 2: PROFILE ─────────────────── */
+    .avatar-row {
+      display: flex; gap: 10px; flex-wrap: wrap;
+    }
+    .avatar-pick {
+      width: 52px; height: 52px; border-radius: 14px;
+      background: var(--forest); border: 2px solid transparent;
+      cursor: pointer; font-size: 1.6rem;
+      display: grid; place-items: center;
+      transition: all 0.2s;
+    }
+    .avatar-pick:hover   { border-color: var(--leaf); transform: scale(1.08); }
+    .avatar-pick.selected { border-color: var(--gold); box-shadow: 0 0 16px rgba(244,201,93,0.4); }
+
+    /* ─────────────────── STEP 3: GOALS / UNO CARDS ─────────────────── */
+    .uno-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    @media (max-width: 420px) {
+      .uno-grid { grid-template-columns: 1fr; }
+    }
+    .uno-card {
+      border-radius: 18px; padding: 18px 16px;
+      border: 2px solid transparent;
+      cursor: pointer; transition: all 0.22s;
+      position: relative; overflow: hidden;
+      user-select: none;
+    }
+    .uno-card::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(circle at 110% 110%, rgba(255,255,255,0.12), transparent 60%);
+      pointer-events: none;
+    }
+    .uno-card:hover  { transform: translateY(-3px) scale(1.02); }
+    .uno-card.active { border-color: white; box-shadow: 0 0 24px rgba(255,255,255,0.15); }
+    .uno-card .card-icon { font-size: 1.8rem; margin-bottom: 8px; }
+    .uno-card .card-name { font-family: var(--font-head); font-size: 0.9rem; font-weight: 700; color: white; }
+    .uno-card .card-desc { font-size: 0.72rem; color: rgba(255,255,255,0.75); margin-top: 3px; }
+    .uno-check {
+      position: absolute; top: 10px; right: 10px;
+      width: 20px; height: 20px; border-radius: 50%;
+      background: white; display: none; align-items: center; justify-content: center;
+      font-size: 0.7rem; color: var(--deep-pine); font-weight: 800;
+    }
+    .uno-card.active .uno-check { display: flex; }
+
+    .uno-green  { background: linear-gradient(140deg, #1a5c35, #2e8a52); }
+    .uno-gold   { background: linear-gradient(140deg, #7c5808, #c28a12); }
+    .uno-red    { background: linear-gradient(140deg, #7c1b14, #b83026); }
+    .uno-blue   { background: linear-gradient(140deg, #1a3d6e, #2c62b3); }
+    .uno-purple { background: linear-gradient(140deg, #3b1a6e, #6132b3); }
+    .uno-teal   { background: linear-gradient(140deg, #0d4d4d, #1a8080); }
+
+    /* ─────────────────── STEP 4: VERIFICATION ─────────────────── */
+    .pin-row {
+      display: flex; justify-content: center; gap: 12px;
+    }
+    .pin-digit {
+      width: 56px; height: 64px; border-radius: 14px;
+      background: rgba(6,35,26,0.7); border: 2px solid rgba(141,191,63,0.2);
+      color: var(--gold); font-size: 1.6rem; font-weight: 800;
+      text-align: center; font-family: var(--font-head);
+      outline: none; transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .pin-digit:focus {
+      border-color: var(--leaf);
+      box-shadow: 0 0 0 3px rgba(141,191,63,0.2);
+    }
+
+    /* ─────────────────── STEP 5: SUCCESS ─────────────────── */
+    .success-hero {
+      display: flex; flex-direction: column; align-items: center;
+      text-align: center; gap: 16px; padding: 8px 0;
+    }
+    .success-ring {
+      width: 96px; height: 96px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(141,191,63,0.2), rgba(6,35,26,0.5));
+      border: 3px solid var(--leaf);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2.8rem;
+      box-shadow: 0 0 50px rgba(141,191,63,0.4), 0 0 100px rgba(141,191,63,0.15);
+      animation: successPulse 2s ease-in-out infinite;
+    }
+    @keyframes successPulse {
+      0%,100% { box-shadow: 0 0 50px rgba(141,191,63,0.4), 0 0 100px rgba(141,191,63,0.15); transform: scale(1); }
+      50%     { box-shadow: 0 0 70px rgba(141,191,63,0.6), 0 0 130px rgba(141,191,63,0.25); transform: scale(1.04); }
+    }
+    .confetti-dot {
+      position: absolute; border-radius: 50%;
+      animation: confettiFly 1.2s ease-out both;
+    }
+    @keyframes confettiFly {
+      from { opacity: 1; transform: translate(0,0) scale(1); }
+      to   { opacity: 0; transform: var(--end); scale(0.3); }
+    }
+    .milestone-badges {
+      display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;
+    }
+    .badge {
+      display: inline-flex; align-items: center; gap: 5px;
+      padding: 7px 14px; border-radius: 999px;
+      font-size: 0.78rem; font-family: var(--font-head); font-weight: 600;
+    }
+    .badge-emerald { background: rgba(141,191,63,0.15); color: var(--leaf); border: 1px solid rgba(141,191,63,0.3); }
+    .badge-gold    { background: rgba(244,201,93,0.13); color: var(--gold); border: 1px solid rgba(244,201,93,0.3); }
+    .badge-sky     { background: rgba(92,169,255,0.12); color: var(--sky);  border: 1px solid rgba(92,169,255,0.25); }
+
+    /* ─────────────────── NAVIGATION ROW ─────────────────── */
+    .nav-row {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-top: auto; padding-top: 28px; gap: 12px;
+    }
+    .step-counter {
+      font-size: 0.72rem; color: rgba(246,248,242,0.4);
+      font-family: var(--font-head);
+    }
+
+    /* ─────────────────── STAT CHIPS (step 1) ─────────────────── */
+    .stat-row {
+      display: flex; gap: 12px; flex-wrap: wrap;
+    }
+    .stat-chip {
+      flex: 1; min-width: 100px;
+      border-radius: 14px; padding: 14px 16px;
+      background: rgba(31,93,59,0.4); border: 1px solid rgba(141,191,63,0.15);
+    }
+    .stat-chip .s-val { font-family: var(--font-head); font-size: 1.4rem; font-weight: 800; color: var(--gold); }
+    .stat-chip .s-lbl { font-size: 0.7rem; color: rgba(246,248,242,0.5); margin-top: 2px; }
+
+    /* ─────────────────── PROGRESS % label ─────────────────── */
+    .progress-pct {
+      text-align: right; font-size: 0.7rem;
+      color: rgba(246,248,242,0.4); margin-top: 4px;
+    }
+
+    /* ─────────────────── LOADING SPINNER ─────────────────── */
+    .spinner {
+      width: 20px; height: 20px; border-radius: 50%;
+      border: 2px solid rgba(255,255,255,0.15);
+      border-top-color: var(--deep-pine);
+      animation: spin 0.7s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* ─────────────────── RESPONSIVE ─────────────────── */
+    @media (max-width: 600px) {
+      .progress-wrapper { margin-top: 70px; }
+      .stat-row { gap: 8px; }
+    }
+
+    /* ─────────────────── HINT TEXT ─────────────────── */
+    .hint {
+      font-size: 0.75rem; color: rgba(246,248,242,0.42);
+      line-height: 1.5;
+    }
+    .hint a { color: var(--leaf); text-underline-offset: 3px; }
+
+    /* ─────────────────── DIVIDER ─────────────────── */
+    .divider {
+      height: 1px; background: rgba(255,255,255,0.07);
+      margin: 4px 0;
+    }
+
+    /* ─────────────────── TOAST ─────────────────── */
+    #toast-container {
+      position: fixed; bottom: 24px; left: 50%;
+      transform: translateX(-50%); z-index: 999;
+      display: flex; flex-direction: column; gap: 8px;
+      pointer-events: none;
+    }
+    .toast {
+      padding: 12px 20px; border-radius: 12px;
+      font-size: 0.84rem; font-family: var(--font-body);
+      backdrop-filter: blur(12px);
+      animation: toastIn 0.3s ease, toastOut 0.3s ease 2.5s both;
+      white-space: nowrap;
+    }
+    .toast-success { background: rgba(31,93,59,0.9); color: var(--leaf); border: 1px solid rgba(141,191,63,0.3); }
+    .toast-error   { background: rgba(100,20,15,0.9); color: #ff7b73; border: 1px solid rgba(217,75,61,0.3); }
+    @keyframes toastIn  { from { opacity:0; transform:translateY(10px); } to { opacity:1; transform:translateY(0); } }
+    @keyframes toastOut { from { opacity:1; } to { opacity:0; } }
+  </style>
+</head>
+<body>
+
+<!-- Background scene -->
+<div class="bg-scene" aria-hidden="true">
+  <div class="bg-gradient"></div>
+  <div class="bg-orb bg-orb-1"></div>
+  <div class="bg-orb bg-orb-2"></div>
+  <div class="bg-orb bg-orb-3"></div>
+  <div class="bg-grid"></div>
+  <!-- Leaves & fireflies injected by JS -->
+</div>
+
+<!-- Header -->
+<header class="header-bar" role="banner">
+  <a href="/" class="logo" aria-label="C7 Winners home">
+    <div class="logo-badge" aria-hidden="true">C7</div>
+    <span>C7 Winners</span>
+  </a>
+  <button class="skip-btn" id="skipBtn" type="button" aria-label="Skip onboarding">
+    Skip for now →
+  </button>
+</header>
+
+<!-- Toast container -->
+<div id="toast-container" role="status" aria-live="polite"></div>
+
+<!-- Main content -->
+<main class="page-wrap" role="main">
+
+  <!-- Progress steps -->
+  <div class="progress-wrapper" role="navigation" aria-label="Onboarding progress">
+    <div class="progress-steps" id="progressSteps"></div>
+    <p class="progress-pct" id="progressPct" aria-live="polite"></p>
+  </div>
+
+  <!-- Onboarding card -->
+  <div class="onboarding-card" role="region" aria-label="Onboarding step">
+    <div class="card-glow-top" aria-hidden="true"></div>
+    <div class="card-body">
+
+      <!-- STEP 0: WELCOME -->
+      <section class="step-panel" id="step-0" aria-label="Welcome" data-step="0">
+        <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
+          <div class="welcome-icon" aria-hidden="true">🌲</div>
+          <div>
+            <p class="step-eyebrow">Your journey begins</p>
+            <h1 class="step-title">Welcome to your<br><span class="leaf-text">Forest Dashboard</span></h1>
+          </div>
+        </div>
+        <p class="step-body-text">
+          A few quick steps to personalise your experience — then you're free to explore
+          every game, promotion, and reward we have waiting for you.
+        </p>
+        <div class="stat-row" aria-label="Platform highlights">
+          <div class="stat-chip">
+            <div class="s-val">37+</div>
+            <div class="s-lbl">Provably-fair games</div>
+          </div>
+          <div class="stat-chip">
+            <div class="s-val">∞</div>
+            <div class="s-lbl">Instant payouts</div>
+          </div>
+          <div class="stat-chip">
+            <div class="s-val">24/7</div>
+            <div class="s-lbl">Live support</div>
+          </div>
+        </div>
+        <div class="feature-pills">
+          <span class="pill pill-green">🌿 Provably Fair</span>
+          <span class="pill pill-gold">✦ VIP Rewards</span>
+          <span class="pill pill-sky">⚡ Crypto Native</span>
+        </div>
+        <div class="nav-row">
+          <span class="step-counter">Step 1 of 5</span>
+          <button class="btn btn-primary btn-lg" onclick="nextStep()" type="button">
+            Enter the Forest <span aria-hidden="true">→</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- STEP 1: PROFILE SETUP -->
+      <section class="step-panel" id="step-1" aria-label="Profile setup" data-step="1" hidden>
+        <p class="step-eyebrow">Profile setup</p>
+        <h2 class="step-title">Set up your<br><span class="gold-text">identity</span></h2>
+        <p class="step-body-text">How should we address you in leaderboards, chat, and rewards?</p>
+
+        <div style="display:flex;align-items:flex-end;gap:16px;flex-wrap:wrap;">
+          <div id="avatarPreview" style="
+            width:64px;height:64px;border-radius:18px;
+            background:linear-gradient(135deg,var(--forest),var(--deep-pine));
+            border:2px solid rgba(141,191,63,0.4);
+            display:flex;align-items:center;justify-content:center;
+            font-size:1.8rem;flex-shrink:0;
+            box-shadow:0 0 24px rgba(141,191,63,0.2);
+            transition:all 0.3s;
+          " aria-label="Selected avatar">🌲</div>
+          <div class="avatar-row" role="group" aria-label="Avatar selection">
+            <button class="avatar-pick selected" onclick="pickAvatar(this,'🌲')" type="button" aria-pressed="true" aria-label="Tree avatar">🌲</button>
+            <button class="avatar-pick" onclick="pickAvatar(this,'🦊')" type="button" aria-pressed="false" aria-label="Fox avatar">🦊</button>
+            <button class="avatar-pick" onclick="pickAvatar(this,'🐺')" type="button" aria-pressed="false" aria-label="Wolf avatar">🐺</button>
+            <button class="avatar-pick" onclick="pickAvatar(this,'🦅')" type="button" aria-pressed="false" aria-label="Eagle avatar">🦅</button>
+            <button class="avatar-pick" onclick="pickAvatar(this,'🌙')" type="button" aria-pressed="false" aria-label="Moon avatar">🌙</button>
+            <button class="avatar-pick" onclick="pickAvatar(this,'⚡')" type="button" aria-pressed="false" aria-label="Lightning avatar">⚡</button>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="displayName">Display name</label>
+          <input class="form-input" id="displayName" type="text"
+            placeholder="e.g. ForestRider" maxlength="30" autocomplete="nickname"
+            oninput="updateAvatarPreview()" aria-describedby="nameHint" />
+          <p class="hint" id="nameHint">Visible on leaderboards and in live chat. Max 30 chars.</p>
+        </div>
+
+        <div class="nav-row">
+          <button class="btn btn-ghost" onclick="prevStep()" type="button">← Back</button>
+          <span class="step-counter">Step 2 of 5</span>
+          <button class="btn btn-primary" onclick="validateProfile()" type="button">Continue →</button>
+        </div>
+      </section>
+
+      <!-- STEP 2: GOAL SELECTION (UNO CARDS) -->
+      <section class="step-panel" id="step-2" aria-label="Goal selection" data-step="2" hidden>
+        <p class="step-eyebrow">Your goals</p>
+        <h2 class="step-title">Choose your<br><span class="leaf-text">play style</span></h2>
+        <p class="step-body-text">We'll tailor your dashboard and bonus offers. Select all that apply.</p>
+
+        <div class="uno-grid" role="group" aria-label="Play style cards">
+          <button class="uno-card uno-green" onclick="toggleGoal(this,'thrill')" type="button" aria-pressed="false">
+            <div class="uno-check" aria-hidden="true">✓</div>
+            <div class="card-icon" aria-hidden="true">🎲</div>
+            <div class="card-name">High Roller</div>
+            <div class="card-desc">Big bets, big wins</div>
+          </button>
+          <button class="uno-card uno-gold" onclick="toggleGoal(this,'casual')" type="button" aria-pressed="false">
+            <div class="uno-check" aria-hidden="true">✓</div>
+            <div class="card-icon" aria-hidden="true">☀️</div>
+            <div class="card-name">Casual Player</div>
+            <div class="card-desc">Fun-first, low-key</div>
+          </button>
+          <button class="uno-card uno-red" onclick="toggleGoal(this,'vip')" type="button" aria-pressed="false">
+            <div class="uno-check" aria-hidden="true">✓</div>
+            <div class="card-icon" aria-hidden="true">👑</div>
+            <div class="card-name">VIP Climber</div>
+            <div class="card-desc">Chase every tier</div>
+          </button>
+          <button class="uno-card uno-blue" onclick="toggleGoal(this,'strategy')" type="button" aria-pressed="false">
+            <div class="uno-check" aria-hidden="true">✓</div>
+            <div class="card-icon" aria-hidden="true">🧠</div>
+            <div class="card-name">Strategist</div>
+            <div class="card-desc">Calculated moves</div>
+          </button>
+          <button class="uno-card uno-purple" onclick="toggleGoal(this,'social')" type="button" aria-pressed="false">
+            <div class="uno-check" aria-hidden="true">✓</div>
+            <div class="card-icon" aria-hidden="true">💬</div>
+            <div class="card-name">Social Gamer</div>
+            <div class="card-desc">Chat & compete</div>
+          </button>
+          <button class="uno-card uno-teal" onclick="toggleGoal(this,'explorer')" type="button" aria-pressed="false">
+            <div class="uno-check" aria-hidden="true">✓</div>
+            <div class="card-icon" aria-hidden="true">🗺️</div>
+            <div class="card-name">Explorer</div>
+            <div class="card-desc">Try every game</div>
+          </button>
+        </div>
+
+        <div class="nav-row">
+          <button class="btn btn-ghost" onclick="prevStep()" type="button">← Back</button>
+          <span class="step-counter">Step 3 of 5</span>
+          <button class="btn btn-primary" onclick="validateGoals()" type="button">Continue →</button>
+        </div>
+      </section>
+
+      <!-- STEP 3: PREFERRED CURRENCY -->
+      <section class="step-panel" id="step-3" aria-label="Preferred currency" data-step="3" hidden>
+        <p class="step-eyebrow">Currency &amp; preferences</p>
+        <h2 class="step-title">Pick your<br><span class="gold-text">default currency</span></h2>
+        <p class="step-body-text">We'll show balances, odds and payouts in this asset. You can change it anytime.</p>
+
+        <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:12px;" role="radiogroup" aria-label="Currency selection">
+          <label class="uno-card uno-gold" style="cursor:pointer;position:relative;" id="cur-USDT">
+            <input type="radio" name="currency" value="USDT" style="position:absolute;opacity:0;width:1px;height:1px;" checked onchange="setCurrency('USDT')" />
+            <div class="uno-check" aria-hidden="true">✓</div>
+            <div class="card-icon" aria-hidden="true">💵</div>
+            <div class="card-name">USDT</div>
+            <div class="card-desc">Stable · default</div>
+          </label>
+          <label class="uno-card uno-teal" style="cursor:pointer;position:relative;" id="cur-BTC">
+            <input type="radio" name="currency" value="BTC" style="position:absolute;opacity:0;width:1px;height:1px;" onchange="setCurrency('BTC')" />
+            <div class="uno-check" aria-hidden="true">✓</div>
+            <div class="card-icon" aria-hidden="true">₿</div>
+            <div class="card-name">Bitcoin</div>
+            <div class="card-desc">OG crypto</div>
+          </label>
+          <label class="uno-card uno-blue" style="cursor:pointer;position:relative;" id="cur-ETH">
+            <input type="radio" name="currency" value="ETH" style="position:absolute;opacity:0;width:1px;height:1px;" onchange="setCurrency('ETH')" />
+            <div class="uno-check" aria-hidden="true">✓</div>
+            <div class="card-icon" aria-hidden="true">Ξ</div>
+            <div class="card-name">Ethereum</div>
+            <div class="card-desc">Smart contracts</div>
+          </label>
+          <label class="uno-card uno-purple" style="cursor:pointer;position:relative;" id="cur-SOL">
+            <input type="radio" name="currency" value="SOL" style="position:absolute;opacity:0;width:1px;height:1px;" onchange="setCurrency('SOL')" />
+            <div class="uno-check" aria-hidden="true">✓</div>
+            <div class="card-icon" aria-hidden="true">◎</div>
+            <div class="card-name">Solana</div>
+            <div class="card-desc">Fast &amp; cheap</div>
+          </label>
+        </div>
+
+        <div style="
+          margin-top:4px; padding:12px 16px; border-radius:14px;
+          background:rgba(244,201,93,0.1); border:1px solid rgba(244,201,93,0.3);
+          display:flex; gap:10px; align-items:flex-start;
+        ">
+          <span aria-hidden="true">🎁</span>
+          <p class="hint" style="color:rgba(246,248,242,0.85);">
+            Make your first deposit after onboarding to unlock a
+            <strong style="color:var(--gold);">100% match bonus up to $500</strong>.
+          </p>
+        </div>
+
+        <div class="nav-row">
+          <button class="btn btn-ghost" onclick="prevStep()" type="button">← Back</button>
+          <span class="step-counter">Step 4 of 5</span>
+          <button class="btn btn-primary" onclick="nextStep()" type="button">Continue →</button>
+        </div>
+      </section>
+
+      <!-- STEP 4: SUCCESS / COMPLETION -->
+      <section class="step-panel" id="step-4" aria-label="Setup complete" data-step="4" hidden>
+        <div class="success-hero" id="successHero">
+          <div class="success-ring" role="img" aria-label="Success">🌲</div>
+          <div>
+            <h2 class="step-title" style="text-align:center;">
+              You're all set,<br><span id="heroName" class="gold-text">Forest Rider</span>!
+            </h2>
+            <p class="step-body-text" style="text-align:center;margin-top:8px;">
+              Your personalised C7 Winners dashboard is ready.<br>
+              Step into the forest and claim your first bonus.
+            </p>
+          </div>
+
+          <div class="milestone-badges" role="list" aria-label="Unlocked milestones">
+            <span class="badge badge-emerald" role="listitem">🌿 Profile Ready</span>
+            <span class="badge badge-gold" role="listitem">✦ Welcome Bonus Active</span>
+            <span class="badge badge-sky" role="listitem">⚡ Dashboard Unlocked</span>
+          </div>
+
+          <button class="btn btn-gold btn-full btn-lg" id="enterDashboardBtn"
+            onclick="enterDashboard()" type="button"
+            aria-label="Enter your personalised dashboard">
+            Enter Dashboard →
+          </button>
+
+          <p class="hint" style="text-align:center;">
+            You'll be redirected to your personalised dashboard in <span id="countdown" style="color:var(--leaf);">5</span>s
+          </p>
+        </div>
+        <!-- no nav-row here — only "Enter" CTA -->
+      </section>
+
+    </div><!-- /card-body -->
+  </div><!-- /onboarding-card -->
+
+</main>
+
+<script>
+// ─────────────────────────────────────────────────
+//  STATE
+// ─────────────────────────────────────────────────
+const STEPS = ['Welcome','Profile','Goals','Currency','Ready!'];
+const DASHBOARD_URL = '/dashboard/';
+const MAIN_APP_URL  = '/#/dtx';
+
+let state = {
+  currentStep: 0,
+  displayName:  '',
+  avatar:       '🌲',
+  goals:        [],
+  currency:     'USDT',
+};
+
+// ─────────────────────────────────────────────────
+//  INIT
+// ─────────────────────────────────────────────────
+function init() {
+  spawnLeaves();
+  spawnFireflies();
+  renderProgress();
+  showStep(0);
+  setupCurrencyDefaults();
+
+  document.getElementById('skipBtn').addEventListener('click', function() {
+    saveState();
+    window.location.href = DASHBOARD_URL;
+  });
+}
+
+// ─────────────────────────────────────────────────
+//  BACKGROUND PARTICLES
+// ─────────────────────────────────────────────────
+function spawnLeaves() {
+  const scene = document.querySelector('.bg-scene');
+  const leafChars = ['🍃','🌿','🍀','🌱'];
+  for (let i = 0; i < 18; i++) {
+    const leaf = document.createElement('span');
+    leaf.className = 'leaf';
+    leaf.setAttribute('aria-hidden', 'true');
+    leaf.textContent = leafChars[i % leafChars.length];
+    leaf.style.left   = (Math.random() * 100) + 'vw';
+    leaf.style.bottom = '-5vh';
+    leaf.style.animationDuration = (18 + Math.random() * 22) + 's';
+    leaf.style.animationDelay    = (Math.random() * 20) + 's';
+    leaf.style.fontSize           = (0.8 + Math.random() * 0.8) + 'em';
+    scene.appendChild(leaf);
+  }
+}
+function spawnFireflies() {
+  const scene = document.querySelector('.bg-scene');
+  for (let i = 0; i < 20; i++) {
+    const ff = document.createElement('div');
+    ff.className = 'firefly';
+    ff.setAttribute('aria-hidden', 'true');
+    ff.style.left             = (Math.random() * 100) + 'vw';
+    ff.style.top              = (Math.random() * 100) + 'vh';
+    ff.style.animationDelay   = (Math.random() * 4) + 's';
+    ff.style.animationDuration= (2 + Math.random() * 3) + 's';
+    scene.appendChild(ff);
+  }
+}
+
+// ─────────────────────────────────────────────────
+//  PROGRESS
+// ─────────────────────────────────────────────────
+function renderProgress() {
+  const container = document.getElementById('progressSteps');
+  container.innerHTML = STEPS.map((label, i) => {
+    const cls = i < state.currentStep ? 'done' : i === state.currentStep ? 'active' : '';
+    return `<div class="step-track">
+      <div class="step-bar ${cls}" role="presentation"></div>
+      <div class="step-label ${cls}">${label}</div>
+    </div>`;
+  }).join('');
+  const pct = Math.round((state.currentStep / (STEPS.length - 1)) * 100);
+  document.getElementById('progressPct').textContent = pct + '% complete';
+}
+
+// ─────────────────────────────────────────────────
+//  STEP NAVIGATION
+// ─────────────────────────────────────────────────
+function showStep(n) {
+  const panels = document.querySelectorAll('.step-panel');
+  panels.forEach(p => {
+    p.classList.remove('visible');
+    p.hidden = true;
+  });
+  const target = document.getElementById('step-' + n);
+  if (!target) return;
+  target.hidden = false;
+  // RAF ensures the hidden removal is painted before class add
+  requestAnimationFrame(() => target.classList.add('visible'));
+  state.currentStep = n;
+  renderProgress();
+  // Trigger success side-effects when reaching the final step
+  if (n === STEPS.length - 1) {
+    setTimeout(activateSuccessStep, 80);
+  }
+  // Scroll card into view on mobile
+  target.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+function nextStep() {
+  if (state.currentStep < STEPS.length - 1) {
+    showStep(state.currentStep + 1);
+  }
+}
+function prevStep() {
+  if (state.currentStep > 0) {
+    showStep(state.currentStep - 1);
+  }
+}
+
+// ─────────────────────────────────────────────────
+//  STEP 1 – PROFILE VALIDATION
+// ─────────────────────────────────────────────────
+function validateProfile() {
+  const nameEl = document.getElementById('displayName');
+  const name = nameEl.value.trim();
+  if (!name) {
+    nameEl.focus();
+    toast('Please enter a display name', 'error');
+    return;
+  }
+  if (name.length < 2) {
+    toast('Name must be at least 2 characters', 'error');
+    return;
+  }
+  state.displayName = name;
+  nextStep();
+}
+
+function updateAvatarPreview() {
+  const name = document.getElementById('displayName').value.trim();
+  const preview = document.getElementById('avatarPreview');
+  if (name) {
+    const initials = name.split(/\s+/).map(w => w[0]).join('').slice(0,2).toUpperCase();
+    preview.textContent = state.avatar !== '🌲' ? state.avatar : (initials || '🌲');
+  } else {
+    preview.textContent = state.avatar;
+  }
+}
+
+function pickAvatar(el, emoji) {
+  document.querySelectorAll('.avatar-pick').forEach(b => {
+    b.classList.remove('selected');
+    b.setAttribute('aria-pressed', 'false');
+  });
+  el.classList.add('selected');
+  el.setAttribute('aria-pressed', 'true');
+  state.avatar = emoji;
+  const preview = document.getElementById('avatarPreview');
+  preview.textContent = emoji;
+}
+
+// ─────────────────────────────────────────────────
+//  STEP 2 – GOALS
+// ─────────────────────────────────────────────────
+function toggleGoal(el, key) {
+  const isActive = el.classList.toggle('active');
+  el.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+  if (isActive) {
+    state.goals.push(key);
+  } else {
+    state.goals = state.goals.filter(g => g !== key);
+  }
+}
+function validateGoals() {
+  // Goals are optional — always allow continuing
+  nextStep();
+}
+
+// ─────────────────────────────────────────────────
+//  STEP 3 – CURRENCY
+// ─────────────────────────────────────────────────
+function setupCurrencyDefaults() {
+  // Highlight USDT by default
+  setCurrency('USDT');
+}
+function setCurrency(code) {
+  state.currency = code;
+  ['USDT','BTC','ETH','SOL'].forEach(c => {
+    const el = document.getElementById('cur-' + c);
+    if (el) {
+      el.classList.toggle('active', c === code);
+      el.querySelector('input').checked = (c === code);
+    }
+  });
+}
+
+// ─────────────────────────────────────────────────
+//  STEP 4 – SUCCESS + COUNTDOWN
+// ─────────────────────────────────────────────────
+let countdownTimer = null;
+function activateSuccessStep() {
+  const name = state.displayName || 'Forest Rider';
+  document.getElementById('heroName').textContent = name;
+  spawnConfetti();
+  startCountdown();
+}
+
+function startCountdown() {
+  clearInterval(countdownTimer);
+  let n = 5;
+  const el = document.getElementById('countdown');
+  if (el) el.textContent = n;
+  countdownTimer = setInterval(() => {
+    n--;
+    if (el) el.textContent = n;
+    if (n <= 0) {
+      clearInterval(countdownTimer);
+      enterDashboard();
+    }
+  }, 1000);
+}
+
+function spawnConfetti() {
+  const hero = document.getElementById('successHero');
+  if (!hero) return;
+  const colors = ['#8DBF3F','#F4C95D','#D94B3D','#5CA9FF','#4E7A57'];
+  for (let i = 0; i < 30; i++) {
+    const dot = document.createElement('div');
+    dot.className = 'confetti-dot';
+    dot.setAttribute('aria-hidden', 'true');
+    const size = 6 + Math.random() * 8;
+    const x = (Math.random() - 0.5) * 240;
+    const y = -(60 + Math.random() * 140);
+    dot.style.cssText = `
+      width:${size}px; height:${size}px;
+      background:${colors[i % colors.length]};
+      left:calc(50% + ${(Math.random()-0.5)*60}px);
+      top:50%;
+      --end:translate(${x}px,${y}px);
+      animation-delay:${i*0.05}s;
+      border-radius:${Math.random()>0.5?'50%':'3px'};
+    `;
+    hero.appendChild(dot);
+    setTimeout(() => dot.remove(), 2000);
+  }
+}
+
+function enterDashboard() {
+  clearInterval(countdownTimer);
+  saveState();
+  window.location.href = DASHBOARD_URL;
+}
+
+// ─────────────────────────────────────────────────
+//  SAVE / RESTORE STATE
+// ─────────────────────────────────────────────────
+function saveState() {
+  try {
+    localStorage.setItem('c7w_onboarding', JSON.stringify({
+      displayName: state.displayName,
+      avatar:      state.avatar,
+      goals:       state.goals,
+      currency:    state.currency,
+      completed:   true,
+      completedAt: new Date().toISOString(),
+    }));
+  } catch (_) {}
+}
+
+// ─────────────────────────────────────────────────
+//  TOAST
+// ─────────────────────────────────────────────────
+function toast(msg, type) {
+  type = type || 'success';
+  const el = document.createElement('div');
+  el.className = 'toast toast-' + type;
+  el.textContent = (type === 'success' ? '✓ ' : '⚠ ') + msg;
+  el.setAttribute('role', 'alert');
+  document.getElementById('toast-container').appendChild(el);
+  setTimeout(() => el.remove(), 3000);
+}
+
+// ─────────────────────────────────────────────────
+//  KEYBOARD SHORTCUTS
+// ─────────────────────────────────────────────────
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Enter' && e.target.tagName !== 'BUTTON' && e.target.tagName !== 'INPUT') {
+    const btn = document.querySelector('.step-panel.visible .btn-primary');
+    if (btn) btn.click();
+  }
+  if (e.key === 'Escape') {
+    document.getElementById('skipBtn').click();
+  }
+});
+
+// ─────────────────────────────────────────────────
+//  BOOT
+// ─────────────────────────────────────────────────
+document.addEventListener('DOMContentLoaded', init);
+</script>
+</body>
+</html>

@@ -1,0 +1,1009 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Dashboard — C7 Winners</title>
+  <meta name="description" content="Your personalised C7 Winners forest dashboard." />
+  <meta name="robots" content="noindex,nofollow" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+  <style>
+    /* ─────────────────────────────────────────
+       DESIGN TOKENS  ── 4K Forest UNO Theme
+    ───────────────────────────────────────── */
+    :root {
+      --deep-pine:   #163828;
+      --forest:      #1F5D3B;
+      --moss:        #4E7A57;
+      --leaf:        #8DBF3F;
+      --gold:        #F4C95D;
+      --berry:       #D94B3D;
+      --sky:         #5CA9FF;
+      --mist:        #F6F8F2;
+      --surface:     rgba(22,56,40,0.65);
+      --border:      rgba(141,191,63,0.18);
+      --font-head:   'Space Grotesk', system-ui, sans-serif;
+      --font-body:   'Inter', system-ui, sans-serif;
+    }
+
+    /* ─────────────────── RESET ─────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      min-height: 100dvh;
+      background: var(--deep-pine);
+      color: var(--mist);
+      font-family: var(--font-body);
+      overflow-x: hidden;
+    }
+
+    /* ─────────────────── BACKGROUND ─────────────────── */
+    .bg-scene {
+      position: fixed; inset: 0; z-index: 0;
+      overflow: hidden; pointer-events: none;
+    }
+    .bg-gradient {
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 100% 70% at 15% 5%, #0d3d2c 0%, transparent 55%),
+        radial-gradient(ellipse 70% 50% at 85% 95%, #0a2e1e 0%, transparent 50%),
+        linear-gradient(180deg, #06231a 0%, #020e08 100%);
+    }
+    .bg-orb {
+      position: absolute; border-radius: 50%;
+      filter: blur(90px); animation: orbF 14s ease-in-out infinite;
+    }
+    .bg-orb-a { width: 480px; height: 480px; top: -120px; left: -120px; background: rgba(141,191,63,0.14); }
+    .bg-orb-b { width: 560px; height: 560px; bottom: -150px; right: -150px; background: rgba(244,201,93,0.10); animation-delay: 5s; }
+    .bg-orb-c { width: 300px; height: 300px; top: 35%; left: 55%; background: rgba(92,169,255,0.08); animation-delay: 9s; }
+    @keyframes orbF {
+      0%,100% { transform: translate(0,0) scale(1); }
+      40% { transform: translate(24px,-18px) scale(1.05); }
+      75% { transform: translate(-16px,22px) scale(0.96); }
+    }
+    .bg-grid {
+      position: absolute; inset: 0; opacity: 0.035;
+      background-image:
+        linear-gradient(rgba(141,191,63,0.8) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(141,191,63,0.8) 1px, transparent 1px);
+      background-size: 56px 56px;
+      mask-image: radial-gradient(ellipse at 40% 30%, black 20%, transparent 70%);
+      -webkit-mask-image: radial-gradient(ellipse at 40% 30%, black 20%, transparent 70%);
+    }
+    .leaf { position: absolute; animation: lf linear infinite; opacity: 0; pointer-events: none; }
+    @keyframes lf {
+      0%   { transform: translateY(110vh) rotate(0deg); opacity: 0; }
+      5%   { opacity: 0.5; }
+      95%  { opacity: 0.35; }
+      100% { transform: translateY(-8vh) rotate(540deg) translateX(60px); opacity: 0; }
+    }
+    .firefly {
+      position: absolute; border-radius: 50%;
+      width: 3px; height: 3px;
+      background: var(--gold);
+      box-shadow: 0 0 8px 2px var(--gold);
+      animation: ffb 3.5s ease-in-out infinite;
+    }
+    @keyframes ffb {
+      0%,100% { opacity: 0; }
+      50% { opacity: 0.85; transform: scale(1.4); }
+    }
+
+    /* ─────────────────── LAYOUT ─────────────────── */
+    .layout { position: relative; z-index: 1; display: flex; min-height: 100dvh; }
+
+    /* Sidebar */
+    .sidebar {
+      width: 68px; flex-shrink: 0;
+      display: flex; flex-direction: column; align-items: center;
+      gap: 6px; padding: 16px 0;
+      background: rgba(6,35,26,0.8);
+      border-right: 1px solid var(--border);
+      backdrop-filter: blur(16px);
+      position: sticky; top: 0; height: 100dvh; overflow: hidden;
+    }
+    @media (max-width: 640px) { .sidebar { display: none; } }
+    .sidebar-logo {
+      width: 40px; height: 40px; border-radius: 12px;
+      background: linear-gradient(135deg, var(--leaf), var(--gold));
+      display: grid; place-items: center;
+      font-family: var(--font-head); font-weight: 800;
+      font-size: 0.85rem; color: var(--deep-pine);
+      box-shadow: 0 0 18px rgba(141,191,63,0.5);
+      text-decoration: none; margin-bottom: 10px;
+      flex-shrink: 0;
+    }
+    .sidebar-divider { width: 32px; height: 1px; background: var(--border); margin: 4px 0; }
+    .nav-icon {
+      width: 44px; height: 44px; border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem; cursor: pointer; transition: all 0.2s;
+      background: transparent; border: none; color: var(--mist);
+      position: relative; text-decoration: none;
+    }
+    .nav-icon:hover { background: rgba(141,191,63,0.12); }
+    .nav-icon.active {
+      background: rgba(141,191,63,0.18);
+      box-shadow: 0 0 0 1px rgba(141,191,63,0.3);
+    }
+    .nav-icon .tooltip {
+      position: absolute; left: 56px; top: 50%; transform: translateY(-50%);
+      background: rgba(6,35,26,0.95); border: 1px solid var(--border);
+      padding: 5px 10px; border-radius: 8px;
+      font-size: 0.72rem; font-family: var(--font-head); font-weight: 600;
+      white-space: nowrap; color: var(--mist);
+      opacity: 0; pointer-events: none; transition: opacity 0.15s;
+      z-index: 100;
+    }
+    .nav-icon:hover .tooltip { opacity: 1; }
+
+    /* Main area */
+    .main {
+      flex: 1; min-width: 0;
+      padding: 0;
+      display: flex; flex-direction: column;
+    }
+
+    /* Top bar */
+    .topbar {
+      height: 60px; display: flex; align-items: center;
+      justify-content: space-between;
+      padding: 0 24px;
+      background: rgba(6,35,26,0.85);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      position: sticky; top: 0; z-index: 40;
+      flex-shrink: 0;
+    }
+    .topbar-left { display: flex; align-items: center; gap: 10px; }
+    .mobile-logo {
+      display: none;
+      width: 36px; height: 36px; border-radius: 10px;
+      background: linear-gradient(135deg, var(--leaf), var(--gold));
+      align-items: center; justify-content: center;
+      font-family: var(--font-head); font-weight: 800;
+      font-size: 0.8rem; color: var(--deep-pine);
+      text-decoration: none;
+    }
+    @media (max-width: 640px) { .mobile-logo { display: flex; } }
+    .page-title {
+      font-family: var(--font-head); font-weight: 700;
+      font-size: 1rem; color: var(--mist);
+    }
+    .topbar-right { display: flex; align-items: center; gap: 10px; }
+    .avatar-btn {
+      width: 36px; height: 36px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--forest), var(--moss));
+      border: 2px solid rgba(141,191,63,0.4);
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; font-size: 1rem; transition: border-color 0.2s;
+      font-family: var(--font-head); font-weight: 700; font-size: 0.9rem;
+      color: var(--mist);
+    }
+    .avatar-btn:hover { border-color: var(--gold); }
+    .balance-chip {
+      display: flex; align-items: center; gap: 6px;
+      padding: 6px 12px; border-radius: 999px;
+      background: rgba(244,201,93,0.1); border: 1px solid rgba(244,201,93,0.25);
+      font-size: 0.8rem; font-family: var(--font-head); font-weight: 600;
+      color: var(--gold); cursor: default;
+    }
+
+    /* Page content */
+    .page-content {
+      padding: 28px 24px 60px; max-width: 1200px;
+      display: flex; flex-direction: column; gap: 28px;
+    }
+    @media (max-width: 520px) {
+      .page-content { padding: 20px 16px 48px; gap: 20px; }
+    }
+
+    /* ─────────────────── WELCOME BANNER ─────────────────── */
+    .welcome-banner {
+      border-radius: 24px; overflow: hidden; position: relative;
+      background: linear-gradient(135deg, #0d3d2c 0%, #1a6640 60%, #0f2e1d 100%);
+      border: 1px solid rgba(141,191,63,0.2);
+      padding: 32px 36px;
+      box-shadow: 0 20px 60px -20px rgba(0,0,0,0.6);
+    }
+    .banner-bg {
+      position: absolute; inset: 0; pointer-events: none; overflow: hidden;
+    }
+    .banner-orb-1 {
+      position: absolute; width: 300px; height: 300px;
+      right: -60px; top: -80px; border-radius: 50%;
+      background: rgba(141,191,63,0.18); filter: blur(60px);
+    }
+    .banner-orb-2 {
+      position: absolute; width: 200px; height: 200px;
+      left: 40%; bottom: -50px; border-radius: 50%;
+      background: rgba(244,201,93,0.12); filter: blur(50px);
+    }
+    .banner-content { position: relative; z-index: 1; }
+    .welcome-greeting {
+      font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.28em;
+      color: var(--leaf); font-family: var(--font-head); font-weight: 600;
+      display: flex; align-items: center; gap: 6px; margin-bottom: 10px;
+    }
+    .welcome-name {
+      font-family: var(--font-head); font-size: clamp(1.6rem, 4vw, 2.4rem);
+      font-weight: 800; line-height: 1.2; color: var(--mist);
+    }
+    .welcome-name .highlight { color: var(--gold); }
+    .welcome-sub {
+      font-size: 0.9rem; color: rgba(246,248,242,0.65);
+      margin-top: 8px; line-height: 1.55; max-width: 520px;
+    }
+    .banner-ctas {
+      display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px;
+    }
+    .welcome-badge-row {
+      display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px;
+    }
+    .w-badge {
+      display: inline-flex; align-items: center; gap: 4px;
+      padding: 5px 12px; border-radius: 999px;
+      font-size: 0.73rem; font-family: var(--font-head); font-weight: 600;
+    }
+    .wb-green  { background: rgba(141,191,63,0.13); color: var(--leaf); border: 1px solid rgba(141,191,63,0.25); }
+    .wb-gold   { background: rgba(244,201,93,0.11); color: var(--gold); border: 1px solid rgba(244,201,93,0.25); }
+    .wb-sky    { background: rgba(92,169,255,0.10); color: var(--sky);  border: 1px solid rgba(92,169,255,0.22); }
+    .wb-berry  { background: rgba(217,75,61,0.12); color: #ff7b73; border: 1px solid rgba(217,75,61,0.25); }
+
+    /* ─────────────────── STATS ROW ─────────────────── */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+    @media (max-width: 860px) { .stats-grid { grid-template-columns: repeat(2,1fr); } }
+    @media (max-width: 480px) { .stats-grid { grid-template-columns: repeat(2,1fr); gap: 10px; } }
+    .stat-card {
+      border-radius: 18px; padding: 20px 18px;
+      background: var(--surface); border: 1px solid var(--border);
+      backdrop-filter: blur(12px);
+      display: flex; flex-direction: column; gap: 4px;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 20px -8px rgba(0,0,0,0.5);
+    }
+    .stat-card:hover { transform: translateY(-3px); box-shadow: 0 10px 30px -10px rgba(0,0,0,0.6); }
+    .sc-icon { font-size: 1.4rem; margin-bottom: 6px; }
+    .sc-val  { font-family: var(--font-head); font-size: 1.7rem; font-weight: 800; color: var(--mist); }
+    .sc-lbl  { font-size: 0.72rem; color: rgba(246,248,242,0.5); text-transform: uppercase; letter-spacing: 0.1em; }
+    .sc-sub  { font-size: 0.72rem; color: var(--leaf); margin-top: 2px; font-family: var(--font-head); }
+
+    /* ─────────────────── MAIN CONTENT COLUMNS ─────────────────── */
+    .content-cols {
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      gap: 20px;
+    }
+    @media (max-width: 900px) { .content-cols { grid-template-columns: 1fr; } }
+
+    /* ─────────────────── SECTION HEADER ─────────────────── */
+    .section-header {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-bottom: 14px;
+    }
+    .section-title {
+      font-family: var(--font-head); font-size: 1rem; font-weight: 700; color: var(--mist);
+      display: flex; align-items: center; gap: 6px;
+    }
+    .section-title::before {
+      content: ''; display: block; width: 3px; height: 16px;
+      border-radius: 2px; background: var(--leaf);
+    }
+    .section-link {
+      font-size: 0.75rem; color: var(--leaf); text-decoration: none;
+      font-family: var(--font-head); font-weight: 600;
+      transition: color 0.2s;
+    }
+    .section-link:hover { color: var(--gold); }
+
+    /* ─────────────────── QUICK ACTION CARDS ─────────────────── */
+    .qa-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;
+    }
+    @media (max-width: 580px) { .qa-grid { grid-template-columns: repeat(2, 1fr); } }
+    .qa-card {
+      border-radius: 18px; padding: 18px 14px;
+      border: 1px solid var(--border);
+      cursor: pointer; transition: all 0.2s;
+      text-decoration: none; display: flex; flex-direction: column; gap: 8px;
+      position: relative; overflow: hidden;
+    }
+    .qa-card::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(circle at 110% 110%, rgba(255,255,255,0.08), transparent 55%);
+      pointer-events: none;
+    }
+    .qa-card:hover { transform: translateY(-3px); box-shadow: 0 10px 28px -8px rgba(0,0,0,0.5); }
+    .qa-card:focus-visible { outline: 2px solid var(--leaf); outline-offset: 2px; }
+    .qa-icon { font-size: 1.6rem; }
+    .qa-name { font-family: var(--font-head); font-size: 0.88rem; font-weight: 700; color: white; }
+    .qa-desc { font-size: 0.7rem; color: rgba(255,255,255,0.65); }
+    .qa-green   { background: linear-gradient(140deg, #173e29, #1f5c3b); }
+    .qa-gold    { background: linear-gradient(140deg, #5a3e06, #8a5d0e); }
+    .qa-red     { background: linear-gradient(140deg, #551710, #8a2519); }
+    .qa-blue    { background: linear-gradient(140deg, #152945, #1f4070); }
+    .qa-purple  { background: linear-gradient(140deg, #2a1455, #3e1d80); }
+    .qa-teal    { background: linear-gradient(140deg, #0b3535, #145454); }
+
+    /* ─────────────────── ONBOARDING CHECKLIST ─────────────────── */
+    .checklist-card {
+      border-radius: 18px; padding: 20px;
+      background: var(--surface); border: 1px solid var(--border);
+      backdrop-filter: blur(12px);
+    }
+    .checklist-title {
+      font-family: var(--font-head); font-size: 0.95rem; font-weight: 700;
+      color: var(--mist); margin-bottom: 14px;
+      display: flex; align-items: center; gap: 6px;
+    }
+    .progress-bar-wrap {
+      height: 6px; border-radius: 6px;
+      background: rgba(255,255,255,0.08); margin-bottom: 16px; overflow: hidden;
+    }
+    .progress-bar-fill {
+      height: 100%; border-radius: 6px;
+      background: linear-gradient(90deg, var(--leaf), var(--gold));
+      transition: width 0.6s cubic-bezier(0.34,1.56,0.64,1);
+      box-shadow: 0 0 10px rgba(141,191,63,0.5);
+    }
+    .task-item {
+      display: flex; align-items: center; gap: 10px;
+      padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    .task-item:last-child { border-bottom: none; }
+    .task-check {
+      width: 22px; height: 22px; border-radius: 50%; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.7rem; font-weight: 800;
+      transition: all 0.3s;
+    }
+    .task-check.done    { background: var(--leaf); color: var(--deep-pine); box-shadow: 0 0 10px rgba(141,191,63,0.4); }
+    .task-check.pending { background: rgba(255,255,255,0.08); color: transparent; border: 1.5px dashed rgba(255,255,255,0.2); }
+    .task-text { font-size: 0.82rem; flex: 1; color: rgba(246,248,242,0.85); }
+    .task-text.done { text-decoration: line-through; color: rgba(246,248,242,0.4); }
+    .task-action {
+      font-size: 0.7rem; font-family: var(--font-head); font-weight: 600;
+      color: var(--leaf); cursor: pointer; text-decoration: none;
+      transition: color 0.2s;
+    }
+    .task-action:hover { color: var(--gold); }
+
+    /* ─────────────────── SIDEBAR PANEL (right) ─────────────────── */
+    .side-col { display: flex; flex-direction: column; gap: 16px; }
+
+    .panel {
+      border-radius: 18px; padding: 20px;
+      background: var(--surface); border: 1px solid var(--border);
+      backdrop-filter: blur(12px);
+    }
+    .panel-title {
+      font-family: var(--font-head); font-size: 0.85rem; font-weight: 700;
+      color: rgba(246,248,242,0.6); text-transform: uppercase; letter-spacing: 0.15em;
+      margin-bottom: 14px;
+    }
+
+    /* Live wins */
+    .live-win {
+      display: flex; align-items: center; gap: 8px;
+      padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.05);
+      animation: fadeSlideIn 0.4s ease;
+    }
+    .live-win:last-child { border-bottom: none; }
+    @keyframes fadeSlideIn { from { opacity:0; transform: translateX(-8px); } to { opacity:1; transform:none; } }
+    .lw-avatar {
+      width: 30px; height: 30px; border-radius: 8px;
+      background: var(--forest); border: 1px solid rgba(141,191,63,0.2);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.9rem; flex-shrink: 0;
+    }
+    .lw-info { flex: 1; min-width: 0; }
+    .lw-name { font-size: 0.78rem; font-weight: 600; color: var(--mist); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .lw-game { font-size: 0.68rem; color: rgba(246,248,242,0.45); }
+    .lw-amount { font-family: var(--font-head); font-size: 0.82rem; font-weight: 700; color: var(--gold); flex-shrink: 0; }
+
+    /* Bonus card */
+    .bonus-card {
+      border-radius: 14px; padding: 16px;
+      background: linear-gradient(135deg, rgba(91,60,8,0.7), rgba(100,38,8,0.5));
+      border: 1px solid rgba(244,201,93,0.25);
+      display: flex; flex-direction: column; gap: 10px;
+    }
+    .bonus-amt {
+      font-family: var(--font-head); font-size: 1.5rem; font-weight: 800; color: var(--gold);
+      line-height: 1;
+    }
+    .bonus-lbl { font-size: 0.75rem; color: rgba(246,248,242,0.65); }
+    .bonus-timer {
+      font-family: var(--font-head); font-size: 0.75rem; font-weight: 600;
+      color: var(--berry); display: flex; align-items: center; gap: 4px;
+    }
+
+    /* ─────────────────── BUTTONS ─────────────────── */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 7px;
+      border: none; cursor: pointer;
+      font-family: var(--font-head); font-weight: 700;
+      border-radius: 12px;
+      transition: all 0.2s cubic-bezier(0.34,1.56,0.64,1);
+      text-decoration: none; white-space: nowrap; position: relative; overflow: hidden;
+    }
+    .btn::after {
+      content: ''; position: absolute; inset: 0;
+      background: white; opacity: 0; transition: opacity 0.15s;
+    }
+    .btn:hover::after { opacity: 0.07; }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--leaf), #6ba832);
+      color: var(--deep-pine); padding: 11px 22px; font-size: 0.88rem;
+      box-shadow: 0 3px 16px rgba(141,191,63,0.35);
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 22px rgba(141,191,63,0.5); }
+    .btn-gold {
+      background: linear-gradient(135deg, var(--gold), #d49520);
+      color: var(--deep-pine); padding: 11px 22px; font-size: 0.88rem;
+      box-shadow: 0 3px 16px rgba(244,201,93,0.35);
+    }
+    .btn-gold:hover { transform: translateY(-2px); }
+    .btn-ghost {
+      background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.1);
+      color: rgba(246,248,242,0.7); padding: 10px 18px; font-size: 0.84rem;
+    }
+    .btn-ghost:hover { background: rgba(255,255,255,0.11); color: var(--mist); }
+    .btn-sm { font-size: 0.78rem; padding: 8px 14px; border-radius: 8px; }
+    .btn-full { width: 100%; }
+
+    /* ─────────────────── NOTIFY OVERLAY ─────────────────── */
+    #welcome-overlay {
+      position: fixed; inset: 0; z-index: 1000;
+      background: rgba(3,15,10,0.92);
+      backdrop-filter: blur(8px);
+      display: flex; align-items: center; justify-content: center;
+      padding: 20px;
+      animation: overlayIn 0.5s ease both;
+    }
+    @keyframes overlayIn { from { opacity:0; } to { opacity:1; } }
+    .overlay-card {
+      max-width: 440px; width: 100%;
+      border-radius: 28px; padding: 36px 32px;
+      background: rgba(22,56,40,0.9);
+      border: 1px solid rgba(141,191,63,0.25);
+      backdrop-filter: blur(24px);
+      box-shadow: 0 40px 90px -20px rgba(0,0,0,0.8), 0 0 80px rgba(141,191,63,0.08);
+      display: flex; flex-direction: column; gap: 16px; align-items: center;
+      text-align: center;
+      animation: cardIn 0.5s cubic-bezier(0.22,1,0.36,1) 0.1s both;
+    }
+    @keyframes cardIn { from { opacity:0; transform: scale(0.92) translateY(20px); } to { opacity:1; transform:none; } }
+    .ov-ring {
+      width: 88px; height: 88px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(141,191,63,0.15), transparent);
+      border: 2px solid var(--leaf);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2.6rem;
+      box-shadow: 0 0 50px rgba(141,191,63,0.35);
+      animation: ringPulse 2s ease-in-out infinite;
+    }
+    @keyframes ringPulse {
+      0%,100% { box-shadow: 0 0 50px rgba(141,191,63,0.35); }
+      50%     { box-shadow: 0 0 70px rgba(141,191,63,0.55); }
+    }
+    .ov-title {
+      font-family: var(--font-head); font-size: 1.7rem; font-weight: 800;
+      color: var(--mist);
+    }
+    .ov-title .gold { color: var(--gold); }
+    .ov-body { font-size: 0.88rem; color: rgba(246,248,242,0.6); line-height: 1.6; }
+    .ov-badges { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+
+    /* ─────────────────── EMPTY-STATE HINT ─────────────────── */
+    .empty-hint {
+      border-radius: 16px; padding: 20px;
+      background: rgba(31,93,59,0.18); border: 1px dashed rgba(141,191,63,0.2);
+      text-align: center; display: flex; flex-direction: column; gap: 8px; align-items: center;
+    }
+    .empty-hint p { font-size: 0.82rem; color: rgba(246,248,242,0.5); line-height: 1.5; }
+
+    /* ─────────────────── TOAST ─────────────────── */
+    #toast-container {
+      position: fixed; bottom: 24px; left: 50%;
+      transform: translateX(-50%); z-index: 999;
+      pointer-events: none; display: flex; flex-direction: column; gap: 8px;
+    }
+    .toast {
+      padding: 11px 18px; border-radius: 12px;
+      font-size: 0.82rem; white-space: nowrap;
+      animation: tIn 0.3s ease, tOut 0.3s ease 2.5s both;
+    }
+    .toast-success { background: rgba(22,56,40,0.95); color: var(--leaf); border: 1px solid rgba(141,191,63,0.3); }
+    @keyframes tIn  { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:none; } }
+    @keyframes tOut { from { opacity:1; } to { opacity:0; } }
+  </style>
+</head>
+<body>
+
+<!-- Background -->
+<div class="bg-scene" aria-hidden="true">
+  <div class="bg-gradient"></div>
+  <div class="bg-orb bg-orb-a"></div>
+  <div class="bg-orb bg-orb-b"></div>
+  <div class="bg-orb bg-orb-c"></div>
+  <div class="bg-grid"></div>
+</div>
+
+<!-- Welcome overlay (first-entry) -->
+<div id="welcome-overlay" role="dialog" aria-modal="true" aria-labelledby="ov-title-text">
+  <div class="overlay-card">
+    <div class="ov-ring" role="img" aria-label="Forest tree">🌲</div>
+    <div>
+      <h1 class="ov-title" id="ov-title-text">
+        Welcome,<br><span class="gold" id="ovName">Forest Rider</span>!
+      </h1>
+    </div>
+    <p class="ov-body">
+      Your personalised forest dashboard is ready.<br>
+      Explore your first quest, claim your welcome bonus, and dive in.
+    </p>
+    <div class="ov-badges">
+      <span class="w-badge wb-green">🌿 Profile Active</span>
+      <span class="w-badge wb-gold">✦ Bonus Ready</span>
+      <span class="w-badge wb-sky">⚡ First Quest</span>
+    </div>
+    <button class="btn btn-primary btn-full" onclick="closeOverlay()" type="button"
+      style="font-size:1rem;padding:14px 24px;" aria-label="Enter dashboard">
+      Enter Dashboard →
+    </button>
+    <p style="font-size:0.72rem;color:rgba(246,248,242,0.35);">
+      Your adventure begins now. Play responsibly.
+    </p>
+  </div>
+</div>
+
+<!-- Toast container -->
+<div id="toast-container" role="status" aria-live="polite"></div>
+
+<!-- Layout -->
+<div class="layout">
+
+  <!-- Sidebar -->
+  <nav class="sidebar" aria-label="Main navigation">
+    <a href="/" class="sidebar-logo" aria-label="C7 Winners home">C7</a>
+    <div class="sidebar-divider" aria-hidden="true"></div>
+    <a href="/dashboard/" class="nav-icon active" aria-label="Dashboard" aria-current="page">
+      🏠 <span class="tooltip">Dashboard</span>
+    </a>
+    <a href="/#/dtx/games" class="nav-icon" aria-label="Games">
+      🎮 <span class="tooltip">Games</span>
+    </a>
+    <a href="/#/dtx/wallet" class="nav-icon" aria-label="Wallet">
+      💰 <span class="tooltip">Wallet</span>
+    </a>
+    <a href="/#/dtx/vip" class="nav-icon" aria-label="VIP">
+      👑 <span class="tooltip">VIP</span>
+    </a>
+    <a href="/#/dtx/promotions" class="nav-icon" aria-label="Promotions">
+      🎁 <span class="tooltip">Promotions</span>
+    </a>
+    <a href="/#/dtx/leaderboard" class="nav-icon" aria-label="Leaderboard">
+      🏆 <span class="tooltip">Leaderboard</span>
+    </a>
+    <div class="sidebar-divider" aria-hidden="true"></div>
+    <a href="/#/dtx/settings" class="nav-icon" aria-label="Settings">
+      ⚙️ <span class="tooltip">Settings</span>
+    </a>
+  </nav>
+
+  <!-- Main column -->
+  <div class="main">
+    <!-- Topbar -->
+    <header class="topbar" role="banner">
+      <div class="topbar-left">
+        <a href="/" class="mobile-logo" aria-label="C7 Winners">C7</a>
+        <h1 class="page-title">Dashboard</h1>
+      </div>
+      <div class="topbar-right">
+        <div class="balance-chip" aria-label="Balance">
+          <span aria-hidden="true">💰</span>
+          <span id="balanceDisplay">$0.00</span>
+        </div>
+        <div class="avatar-btn" id="userAvatar" aria-label="User menu" role="button" tabindex="0">
+          🌲
+        </div>
+      </div>
+    </header>
+
+    <!-- Page content -->
+    <main class="page-content" role="main">
+
+      <!-- Welcome banner -->
+      <section class="welcome-banner" aria-label="Welcome banner">
+        <div class="banner-bg" aria-hidden="true">
+          <div class="banner-orb-1"></div>
+          <div class="banner-orb-2"></div>
+        </div>
+        <div class="banner-content">
+          <p class="welcome-greeting">
+            <span aria-hidden="true">🌿</span> Step into your forest
+          </p>
+          <h2 class="welcome-name">
+            Hey, <span class="highlight" id="welcomeName">Forest Rider</span>! 🎉
+          </h2>
+          <p class="welcome-sub">
+            Your personalised dashboard is live. Complete your first quest, make a deposit
+            to claim your 100% welcome bonus, and explore 37+ provably-fair games.
+          </p>
+          <div class="welcome-badge-row" role="list" aria-label="Your status badges">
+            <span class="w-badge wb-green" role="listitem">🌿 Account Active</span>
+            <span class="w-badge wb-gold" role="listitem">✦ Bonus Ready</span>
+            <span class="w-badge wb-sky" role="listitem">⚡ New Member</span>
+            <span class="w-badge wb-berry" role="listitem">🎯 0 / 5 Quests</span>
+          </div>
+          <div class="banner-ctas">
+            <a href="/#/dtx/deposit" class="btn btn-gold" aria-label="Deposit to claim bonus">
+              Claim Bonus 🎁
+            </a>
+            <a href="/#/dtx/games" class="btn btn-primary" aria-label="Explore all games">
+              Explore Games →
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Stats row -->
+      <div class="stats-grid" role="region" aria-label="Account stats">
+        <div class="stat-card">
+          <div class="sc-icon" aria-hidden="true">💎</div>
+          <div class="sc-val" id="statBalance">$0.00</div>
+          <div class="sc-lbl">Total Balance</div>
+          <div class="sc-sub">Deposit to start</div>
+        </div>
+        <div class="stat-card">
+          <div class="sc-icon" aria-hidden="true">🎮</div>
+          <div class="sc-val">0</div>
+          <div class="sc-lbl">Games Played</div>
+          <div class="sc-sub">Your first spin awaits</div>
+        </div>
+        <div class="stat-card">
+          <div class="sc-icon" aria-hidden="true">👑</div>
+          <div class="sc-val">Bronze</div>
+          <div class="sc-lbl">VIP Level</div>
+          <div class="sc-sub" id="statXp">0 / 1,000 XP</div>
+        </div>
+        <div class="stat-card">
+          <div class="sc-icon" aria-hidden="true">🏆</div>
+          <div class="sc-val" id="statRank">#—</div>
+          <div class="sc-lbl">Leaderboard Rank</div>
+          <div class="sc-sub">Play to rank up</div>
+        </div>
+      </div>
+
+      <!-- Two-column section -->
+      <div class="content-cols">
+
+        <!-- Left: Quick Actions + Checklist -->
+        <div style="display:flex;flex-direction:column;gap:20px;">
+
+          <!-- Quick action cards -->
+          <section aria-label="Quick actions">
+            <div class="section-header">
+              <h3 class="section-title">Quick Actions</h3>
+              <a href="/#/dtx/games" class="section-link" aria-label="View all games">View all →</a>
+            </div>
+            <div class="qa-grid">
+              <a href="/#/dtx/crash" class="qa-card qa-red" aria-label="Play Crash">
+                <div class="qa-icon" aria-hidden="true">🚀</div>
+                <div class="qa-name">Crash</div>
+                <div class="qa-desc">Cash out before it crashes</div>
+              </a>
+              <a href="/#/dtx/mines" class="qa-card qa-green" aria-label="Play Mines">
+                <div class="qa-icon" aria-hidden="true">💣</div>
+                <div class="qa-name">Mines</div>
+                <div class="qa-desc">Avoid the bombs</div>
+              </a>
+              <a href="/#/dtx/plinko" class="qa-card qa-blue" aria-label="Play Plinko">
+                <div class="qa-icon" aria-hidden="true">🔵</div>
+                <div class="qa-name">Plinko</div>
+                <div class="qa-desc">Drop &amp; win big</div>
+              </a>
+              <a href="/#/dtx/dice" class="qa-card qa-purple" aria-label="Play Dice">
+                <div class="qa-icon" aria-hidden="true">🎲</div>
+                <div class="qa-name">Dice</div>
+                <div class="qa-desc">Classic &amp; provably fair</div>
+              </a>
+              <a href="/#/dtx/deposit" class="qa-card qa-gold" aria-label="Deposit funds">
+                <div class="qa-icon" aria-hidden="true">💳</div>
+                <div class="qa-name">Deposit</div>
+                <div class="qa-desc">Claim welcome bonus</div>
+              </a>
+              <a href="/#/dtx/games" class="qa-card qa-teal" aria-label="Explore all games">
+                <div class="qa-icon" aria-hidden="true">🗺️</div>
+                <div class="qa-name">All Games</div>
+                <div class="qa-desc">37+ to explore</div>
+              </a>
+            </div>
+          </section>
+
+          <!-- Getting started checklist -->
+          <section class="checklist-card" aria-label="Getting started checklist">
+            <h3 class="checklist-title">
+              <span aria-hidden="true">✅</span> Getting Started
+            </h3>
+            <div class="progress-bar-wrap" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" aria-label="Onboarding progress: 20%">
+              <div class="progress-bar-fill" id="checklistProgress" style="width:20%"></div>
+            </div>
+
+            <div id="taskList" role="list" aria-label="Onboarding tasks">
+              <div class="task-item" role="listitem">
+                <div class="task-check done" aria-label="Completed">✓</div>
+                <span class="task-text done">Complete onboarding</span>
+              </div>
+              <div class="task-item" role="listitem">
+                <div class="task-check done" aria-label="Completed">✓</div>
+                <span class="task-text done">Set display name &amp; avatar</span>
+              </div>
+              <div class="task-item" role="listitem">
+                <div class="task-check pending" aria-label="Pending"></div>
+                <span class="task-text">Make your first deposit</span>
+                <a href="/#/dtx/deposit" class="task-action" aria-label="Deposit now">Deposit →</a>
+              </div>
+              <div class="task-item" role="listitem">
+                <div class="task-check pending" aria-label="Pending"></div>
+                <span class="task-text">Play your first game</span>
+                <a href="/#/dtx/games" class="task-action" aria-label="Browse games">Play →</a>
+              </div>
+              <div class="task-item" role="listitem">
+                <div class="task-check pending" aria-label="Pending"></div>
+                <span class="task-text">Set up 2-factor PIN</span>
+                <a href="/#/dtx/settings" class="task-action" aria-label="Go to settings">Setup →</a>
+              </div>
+            </div>
+          </section>
+
+        </div><!-- /left col -->
+
+        <!-- Right: Live Wins + Bonus -->
+        <aside class="side-col" aria-label="Live activity and bonuses">
+
+          <!-- Bonus panel -->
+          <div class="panel" aria-label="Welcome bonus">
+            <p class="panel-title">Welcome Offer</p>
+            <div class="bonus-card">
+              <div class="bonus-amt">100%</div>
+              <div class="bonus-lbl">Match bonus on first deposit</div>
+              <div class="bonus-timer">
+                <span aria-hidden="true">⏰</span>
+                <span>Expires in <span id="bonusTimer">23:59:47</span></span>
+              </div>
+            </div>
+            <a href="/#/dtx/deposit" class="btn btn-gold btn-full" style="margin-top:14px;font-size:0.88rem;padding:12px 20px;" aria-label="Claim up to $500 bonus">
+              Claim up to $500 →
+            </a>
+          </div>
+
+          <!-- Live wins panel -->
+          <div class="panel" aria-label="Recent wins on the platform">
+            <p class="panel-title">Live Wins</p>
+            <div id="liveWins" aria-live="polite" aria-atomic="false">
+              <!-- populated by JS -->
+            </div>
+          </div>
+
+          <!-- Recommended games panel -->
+          <div class="panel" aria-label="Recommended for you">
+            <p class="panel-title">Recommended</p>
+            <div style="display:flex;flex-direction:column;gap:8px;">
+              <a href="/#/dtx/crash" class="task-item" style="text-decoration:none;border-radius:10px;padding:10px 12px;background:rgba(31,93,59,0.25);" aria-label="Play Crash">
+                <span style="font-size:1.1rem;" aria-hidden="true">🚀</span>
+                <div class="lw-info">
+                  <div class="lw-name" style="color:var(--mist);">Crash</div>
+                  <div class="lw-game">Currently hot 🔥</div>
+                </div>
+                <span style="font-size:0.7rem;color:var(--leaf);font-family:var(--font-head);font-weight:600;">Play →</span>
+              </a>
+              <a href="/#/dtx/mines" class="task-item" style="text-decoration:none;border-radius:10px;padding:10px 12px;background:rgba(31,93,59,0.25);" aria-label="Play Mines">
+                <span style="font-size:1.1rem;" aria-hidden="true">💣</span>
+                <div class="lw-info">
+                  <div class="lw-name" style="color:var(--mist);">Mines</div>
+                  <div class="lw-game">Your play style match</div>
+                </div>
+                <span style="font-size:0.7rem;color:var(--leaf);font-family:var(--font-head);font-weight:600;">Play →</span>
+              </a>
+              <a href="/#/dtx/plinko" class="task-item" style="text-decoration:none;border-radius:10px;padding:10px 12px;background:rgba(31,93,59,0.25);" aria-label="Play Plinko">
+                <span style="font-size:1.1rem;" aria-hidden="true">🔵</span>
+                <div class="lw-info">
+                  <div class="lw-name" style="color:var(--mist);">Plinko</div>
+                  <div class="lw-game">High payout potential</div>
+                </div>
+                <span style="font-size:0.7rem;color:var(--leaf);font-family:var(--font-head);font-weight:600;">Play →</span>
+              </a>
+            </div>
+          </div>
+
+        </aside>
+      </div><!-- /content-cols -->
+
+    </main>
+  </div><!-- /main -->
+</div><!-- /layout -->
+
+<script>
+// ─────────────────────────────────────────────────
+//  LOAD SAVED STATE
+// ─────────────────────────────────────────────────
+function loadProfile() {
+  try {
+    const raw = localStorage.getItem('c7w_onboarding');
+    if (raw) return JSON.parse(raw);
+  } catch (_) {}
+  return {};
+}
+
+function applyProfile(p) {
+  const name = p.displayName || 'Forest Rider';
+  const avatar = p.avatar || '🌲';
+  const currency = p.currency || 'USDT';
+
+  document.getElementById('ovName').textContent        = name;
+  document.getElementById('welcomeName').textContent   = name;
+  document.getElementById('userAvatar').textContent    = avatar;
+
+  const curLabel = { USDT:'$0.00', BTC:'₿0.000', ETH:'Ξ0.000', SOL:'◎0.00' }[currency] || '$0.00';
+  document.getElementById('balanceDisplay').textContent = curLabel;
+  document.getElementById('statBalance').textContent    = curLabel;
+}
+
+// ─────────────────────────────────────────────────
+//  OVERLAY
+// ─────────────────────────────────────────────────
+function closeOverlay() {
+  const ov = document.getElementById('welcome-overlay');
+  ov.style.transition = 'opacity 0.4s';
+  ov.style.opacity = '0';
+  setTimeout(() => { ov.remove(); toast('Welcome! Your dashboard is ready.'); }, 400);
+}
+
+// ─────────────────────────────────────────────────
+//  BONUS TIMER
+// ─────────────────────────────────────────────────
+function startBonusTimer() {
+  const el = document.getElementById('bonusTimer');
+  if (!el) return;
+  let totalSec = 23 * 3600 + 59 * 60 + 47;
+  function tick() {
+    if (totalSec <= 0) { el.textContent = 'Expired'; return; }
+    const h = Math.floor(totalSec / 3600);
+    const m = Math.floor((totalSec % 3600) / 60);
+    const s = totalSec % 60;
+    el.textContent = [h,m,s].map(n => String(n).padStart(2,'0')).join(':');
+    totalSec--;
+  }
+  tick();
+  setInterval(tick, 1000);
+}
+
+// ─────────────────────────────────────────────────
+//  LIVE WINS TICKER
+// ─────────────────────────────────────────────────
+const GAMES   = ['Crash','Mines','Plinko','Dice','Wheel','Limbo','Hilo','Keno'];
+const AVATARS = ['🦊','🐺','🦅','🌙','⚡','🌲','🏆','🎯','💎','🔥'];
+const NAMES   = ['ForestRider','MoonWolf','EagleEye','JungleX','NightOwl','GreenKing','Lucky74','Apex99'];
+
+function randomWin() {
+  const multiplier = (1.2 + Math.random() * 20).toFixed(2);
+  const amount     = (Math.random() * 2000 + 20).toFixed(2);
+  return {
+    name:   NAMES[Math.floor(Math.random() * NAMES.length)],
+    avatar: AVATARS[Math.floor(Math.random() * AVATARS.length)],
+    game:   GAMES[Math.floor(Math.random() * GAMES.length)],
+    amount: '$' + amount,
+    mult:   multiplier + 'x',
+  };
+}
+
+function appendWin() {
+  const win = randomWin();
+  const container = document.getElementById('liveWins');
+  if (!container) return;
+  const el = document.createElement('div');
+  el.className = 'live-win';
+  el.setAttribute('aria-label', `${win.name} won ${win.amount} on ${win.game}`);
+  el.innerHTML = `
+    <div class="lw-avatar" aria-hidden="true">${win.avatar}</div>
+    <div class="lw-info">
+      <div class="lw-name">${win.name}</div>
+      <div class="lw-game">${win.game} · ${win.mult}</div>
+    </div>
+    <div class="lw-amount">${win.amount}</div>
+  `;
+  container.prepend(el);
+  // Keep max 6 wins
+  while (container.children.length > 6) {
+    container.removeChild(container.lastChild);
+  }
+}
+
+function initLiveWins() {
+  for (let i = 0; i < 4; i++) appendWin();
+  setInterval(appendWin, 2800);
+}
+
+// ─────────────────────────────────────────────────
+//  BACKGROUND PARTICLES
+// ─────────────────────────────────────────────────
+function spawnParticles() {
+  const scene = document.querySelector('.bg-scene');
+  const leafChars = ['🍃','🌿','🍀'];
+  for (let i = 0; i < 12; i++) {
+    const leaf = document.createElement('span');
+    leaf.className = 'leaf';
+    leaf.setAttribute('aria-hidden', 'true');
+    leaf.textContent = leafChars[i % leafChars.length];
+    leaf.style.left             = (Math.random() * 100) + 'vw';
+    leaf.style.bottom           = '-5vh';
+    leaf.style.animationDuration= (20 + Math.random() * 25) + 's';
+    leaf.style.animationDelay   = (Math.random() * 22) + 's';
+    leaf.style.fontSize         = (0.7 + Math.random() * 0.7) + 'em';
+    scene.appendChild(leaf);
+  }
+  for (let i = 0; i < 16; i++) {
+    const ff = document.createElement('div');
+    ff.className = 'firefly';
+    ff.setAttribute('aria-hidden', 'true');
+    ff.style.left             = (Math.random() * 100) + 'vw';
+    ff.style.top              = (Math.random() * 100) + 'vh';
+    ff.style.animationDelay   = (Math.random() * 4) + 's';
+    ff.style.animationDuration= (2.5 + Math.random() * 3) + 's';
+    scene.appendChild(ff);
+  }
+}
+
+// ─────────────────────────────────────────────────
+//  TOAST
+// ─────────────────────────────────────────────────
+function toast(msg) {
+  const el = document.createElement('div');
+  el.className = 'toast toast-success';
+  el.textContent = '✓ ' + msg;
+  document.getElementById('toast-container').appendChild(el);
+  setTimeout(() => el.remove(), 3200);
+}
+
+// ─────────────────────────────────────────────────
+//  KEYBOARD
+// ─────────────────────────────────────────────────
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    const ov = document.getElementById('welcome-overlay');
+    if (ov) closeOverlay();
+  }
+  if (e.key === 'Enter') {
+    const ov = document.getElementById('welcome-overlay');
+    if (ov) closeOverlay();
+  }
+});
+
+// ─────────────────────────────────────────────────
+//  BOOT
+// ─────────────────────────────────────────────────
+document.addEventListener('DOMContentLoaded', function() {
+  const profile = loadProfile();
+  applyProfile(profile);
+  spawnParticles();
+  startBonusTimer();
+  initLiveWins();
+
+  // Auto-close overlay after 6s if user doesn't interact
+  setTimeout(function() {
+    const ov = document.getElementById('welcome-overlay');
+    if (ov) closeOverlay();
+  }, 6000);
+});
+</script>
+</body>
+</html>
