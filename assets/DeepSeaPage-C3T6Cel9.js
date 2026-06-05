@@ -1,0 +1,1 @@
+import{ab as e}from"./index-B9jX9o0W.js";import{F as a}from"./FishingBase-Bm1n0x_B.js";import"./useDtxBalance-CdOoPxhc.js";function i(){return e.jsx(a,{theme:{name:"Deep Sea",icon:"🦈",themeId:"deep-sea",accent:"#1e40af",accent2:"#3b82f6",bg:"linear-gradient(180deg, #050b2a 0%, #0c1a4d 60%, #02061a 100%)"}})}export{i as default};

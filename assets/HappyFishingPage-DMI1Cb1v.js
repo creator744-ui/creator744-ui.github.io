@@ -1,0 +1,1 @@
+import{ab as e}from"./index-B9jX9o0W.js";import{F as a}from"./FishingBase-Bm1n0x_B.js";import"./useDtxBalance-CdOoPxhc.js";function p(){return e.jsx(a,{theme:{name:"Happy Fishing",icon:"🎣",themeId:"happy",accent:"#0ea5e9",accent2:"#38bdf8",bg:"linear-gradient(180deg, #03283d 0%, #0a4d6e 60%, #062a40 100%)"}})}export{p as default};

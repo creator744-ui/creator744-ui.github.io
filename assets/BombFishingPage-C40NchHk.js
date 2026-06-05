@@ -1,0 +1,1 @@
+import{ab as e}from"./index-B9jX9o0W.js";import{F as a}from"./FishingBase-Bm1n0x_B.js";import"./useDtxBalance-CdOoPxhc.js";function m(){return e.jsx(a,{theme:{name:"Bomb Fishing",icon:"💣",themeId:"bomb",accent:"#dc2626",accent2:"#fb923c",bg:"linear-gradient(180deg, #2a0808 0%, #4d1313 60%, #1a0303 100%)"}})}export{m as default};
