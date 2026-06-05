@@ -708,28 +708,28 @@
 
         <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:12px;" role="radiogroup" aria-label="Currency selection">
           <label class="uno-card uno-gold" style="cursor:pointer;position:relative;" id="cur-USDT">
-            <input type="radio" name="currency" value="USDT" style="position:absolute;opacity:0;width:1px;height:1px;" checked onchange="setCurrency('USDT')" />
+            <input type="radio" name="currency" value="USDT" tabindex="-1" style="position:absolute;opacity:0;width:1px;height:1px;" checked onchange="setCurrency('USDT')" />
             <div class="uno-check" aria-hidden="true">✓</div>
             <div class="card-icon" aria-hidden="true">💵</div>
             <div class="card-name">USDT</div>
             <div class="card-desc">Stable · default</div>
           </label>
           <label class="uno-card uno-teal" style="cursor:pointer;position:relative;" id="cur-BTC">
-            <input type="radio" name="currency" value="BTC" style="position:absolute;opacity:0;width:1px;height:1px;" onchange="setCurrency('BTC')" />
+            <input type="radio" name="currency" value="BTC" tabindex="-1" style="position:absolute;opacity:0;width:1px;height:1px;" onchange="setCurrency('BTC')" />
             <div class="uno-check" aria-hidden="true">✓</div>
             <div class="card-icon" aria-hidden="true">₿</div>
             <div class="card-name">Bitcoin</div>
             <div class="card-desc">OG crypto</div>
           </label>
           <label class="uno-card uno-blue" style="cursor:pointer;position:relative;" id="cur-ETH">
-            <input type="radio" name="currency" value="ETH" style="position:absolute;opacity:0;width:1px;height:1px;" onchange="setCurrency('ETH')" />
+            <input type="radio" name="currency" value="ETH" tabindex="-1" style="position:absolute;opacity:0;width:1px;height:1px;" onchange="setCurrency('ETH')" />
             <div class="uno-check" aria-hidden="true">✓</div>
             <div class="card-icon" aria-hidden="true">Ξ</div>
             <div class="card-name">Ethereum</div>
             <div class="card-desc">Smart contracts</div>
           </label>
           <label class="uno-card uno-purple" style="cursor:pointer;position:relative;" id="cur-SOL">
-            <input type="radio" name="currency" value="SOL" style="position:absolute;opacity:0;width:1px;height:1px;" onchange="setCurrency('SOL')" />
+            <input type="radio" name="currency" value="SOL" tabindex="-1" style="position:absolute;opacity:0;width:1px;height:1px;" onchange="setCurrency('SOL')" />
             <div class="uno-check" aria-hidden="true">✓</div>
             <div class="card-icon" aria-hidden="true">◎</div>
             <div class="card-name">Solana</div>
@@ -1077,7 +1077,9 @@ function toast(msg, type) {
 //  KEYBOARD SHORTCUTS
 // ─────────────────────────────────────────────────
 document.addEventListener('keydown', function(e) {
-  if (e.key === 'Enter' && e.target.tagName !== 'BUTTON' && e.target.tagName !== 'INPUT') {
+  const tag = e.target.tagName;
+  const isEditable = e.target.isContentEditable;
+  if (e.key === 'Enter' && tag !== 'BUTTON' && tag !== 'INPUT' && tag !== 'TEXTAREA' && tag !== 'SELECT' && !isEditable) {
     const btn = document.querySelector('.step-panel.visible .btn-primary');
     if (btn) btn.click();
   }

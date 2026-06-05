@@ -612,7 +612,9 @@
           <span aria-hidden="true">💰</span>
           <span id="balanceDisplay">$0.00</span>
         </div>
-        <div class="avatar-btn" id="userAvatar" aria-label="User menu" role="button" tabindex="0">
+        <div class="avatar-btn" id="userAvatar" aria-label="User menu" role="button" tabindex="0"
+          onclick="window.location.href='/#/dtx/settings'"
+          onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.location.href='/#/dtx/settings';}">
           🌲
         </div>
       </div>
@@ -874,14 +876,14 @@ function closeOverlay() {
 function startBonusTimer() {
   const el = document.getElementById('bonusTimer');
   if (!el) return;
-  let totalSec = 23 * 3600 + 59 * 60 + 47;
+  let remainingSeconds = 23 * 3600 + 59 * 60 + 47;
   function tick() {
-    if (totalSec <= 0) { el.textContent = 'Expired'; return; }
-    const h = Math.floor(totalSec / 3600);
-    const m = Math.floor((totalSec % 3600) / 60);
-    const s = totalSec % 60;
+    if (remainingSeconds <= 0) { el.textContent = 'Expired'; return; }
+    const h = Math.floor(remainingSeconds / 3600);
+    const m = Math.floor((remainingSeconds % 3600) / 60);
+    const s = remainingSeconds % 60;
     el.textContent = [h,m,s].map(n => String(n).padStart(2,'0')).join(':');
-    totalSec--;
+    remainingSeconds--;
   }
   tick();
   setInterval(tick, 1000);
@@ -893,10 +895,15 @@ function startBonusTimer() {
 const GAMES   = ['Crash','Mines','Plinko','Dice','Wheel','Limbo','Hilo','Keno'];
 const AVATARS = ['🦊','🐺','🦅','🌙','⚡','🌲','🏆','🎯','💎','🔥'];
 const NAMES   = ['ForestRider','MoonWolf','EagleEye','JungleX','NightOwl','GreenKing','Lucky74','Apex99'];
+const WIN_MULTIPLIER_MIN   = 1.2;
+const WIN_MULTIPLIER_RANGE = 20;
+const WIN_AMOUNT_MIN       = 20;
+const WIN_AMOUNT_MAX       = 2000;
+const MAX_LIVE_WIN_ROWS    = 6;
 
 function randomWin() {
-  const multiplier = (1.2 + Math.random() * 20).toFixed(2);
-  const amount     = (Math.random() * 2000 + 20).toFixed(2);
+  const multiplier = (WIN_MULTIPLIER_MIN + Math.random() * WIN_MULTIPLIER_RANGE).toFixed(2);
+  const amount     = (Math.random() * WIN_AMOUNT_MAX + WIN_AMOUNT_MIN).toFixed(2);
   return {
     name:   NAMES[Math.floor(Math.random() * NAMES.length)],
     avatar: AVATARS[Math.floor(Math.random() * AVATARS.length)],
@@ -922,8 +929,8 @@ function appendWin() {
     <div class="lw-amount">${win.amount}</div>
   `;
   container.prepend(el);
-  // Keep max 6 wins
-  while (container.children.length > 6) {
+  // Keep max rows
+  while (container.children.length > MAX_LIVE_WIN_ROWS) {
     container.removeChild(container.lastChild);
   }
 }
@@ -978,11 +985,7 @@ function toast(msg) {
 //  KEYBOARD
 // ─────────────────────────────────────────────────
 document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape') {
-    const ov = document.getElementById('welcome-overlay');
-    if (ov) closeOverlay();
-  }
-  if (e.key === 'Enter') {
+  if (e.key === 'Escape' || e.key === 'Enter') {
     const ov = document.getElementById('welcome-overlay');
     if (ov) closeOverlay();
   }
