@@ -1,0 +1,2191 @@
+{
+  "_AdminUsers-CeqRxSDt.js": {
+    "file": "assets/AdminUsers-CeqRxSDt.js",
+    "name": "AdminUsers",
+    "imports": [
+      "index.html",
+      "_select-BNMYQtMa.js",
+      "_input-DWJHXZH0.js",
+      "_createLucideIcon-BITncNkQ.js",
+      "_arrow-up-BJlalHOX.js",
+      "_arrow-up-down-xdataN6O.js",
+      "_ban-C1c_c9Wq.js",
+      "_credit-card-Cnw_rYXB.js",
+      "_crown-BNVTyifs.js",
+      "_shield-alert-DSpfBWsS.js",
+      "_flame-DbZg2z6t.js",
+      "_gift-CiiL1Iwa.js",
+      "_search-BMWAKPVW.js",
+      "_shield-check-D282WMnl.js",
+      "_sparkles-BN8lqK5d.js",
+      "_trending-up-Bpt0B-kT.js",
+      "_users-BPo7ZlDe.js",
+      "_wallet-UIYXLjwd.js",
+      "_x-ByikElx-.js",
+      "_zap-BN29dsjK.js",
+      "_dist-CUIIShIL.js",
+      "_utils-Cz4MqTg-.js"
+    ],
+    "dynamicImports": [
+      "src/components/admin/UsersScene.tsx"
+    ]
+  },
+  "_AreaChart-DCJkcKZm.js": {
+    "file": "assets/AreaChart-DCJkcKZm.js",
+    "name": "AreaChart",
+    "imports": [
+      "index.html",
+      "_clsx-CjueKrWZ.js"
+    ]
+  },
+  "_AutoBetPanel-CHL8Pld1.js": {
+    "file": "assets/AutoBetPanel-CHL8Pld1.js",
+    "name": "AutoBetPanel",
+    "imports": [
+      "index.html",
+      "_input-DWJHXZH0.js",
+      "_createLucideIcon-BITncNkQ.js",
+      "_bot-Bwjsy2ZW.js",
+      "_chevron-down-Byg5LKZ3.js",
+      "_chevron-up-e-UVsG4U.js",
+      "_dist-CUIIShIL.js"
+    ]
+  },
+  "_CasinoBottomNav-BKdImrHc.js": {
+    "file": "assets/CasinoBottomNav-BKdImrHc.js",
+    "name": "CasinoBottomNav",
+    "imports": [
+      "index.html",
+      "_c7-neon-aqua-RxXN2v-l.js"
+    ]
+  },
+  "_Confetti-BCa29L85.js": {
+    "file": "assets/Confetti-BCa29L85.js",
+    "name": "Confetti",
+    "imports": [
+      "index.html"
+    ]
+  },
+  "_DtxButton-pz7ulYR4.js": {
+    "file": "assets/DtxButton-pz7ulYR4.js",
+    "name": "DtxButton",
+    "imports": [
+      "index.html"
+    ]
+  },
+  "_FishingBase-BN1tN77l.js": {
+    "file": "assets/FishingBase-BN1tN77l.js",
+    "name": "FishingBase",
+    "imports": [
+      "index.html",
+      "_dist-CUIIShIL.js",
+      "_useCasinoGame-DJ-HpVtR.js",
+      "_useDtxBalance-yl2mVrBy.js"
+    ]
+  },
+  "_GameHeader-DJiNpnNf.js": {
+    "file": "assets/GameHeader-DJiNpnNf.js",
+    "name": "GameHeader",
+    "imports": [
+      "index.html",
+      "_arrow-left-B_mSi1Yf.js",
+      "_arrow-up-right-CgSS9B5v.js",
+      "_plus-B-fqE4eg.js",
+      "_useCasinoGame-DJ-HpVtR.js",
+      "_UonoBottomNav-CYjgVpmW.js",
+      "_useDtxBalance-yl2mVrBy.js"
+    ]
+  },
+  "_GameHistoryFeed-Ch0Hd2Mi.js": {
+    "file": "assets/GameHistoryFeed-Ch0Hd2Mi.js",
+    "name": "GameHistoryFeed",
+    "imports": [
+      "index.html"
+    ]
+  },
+  "_GoldBurstOverlay-DHW9_G9x.js": {
+    "file": "assets/GoldBurstOverlay-DHW9_G9x.js",
+    "name": "GoldBurstOverlay"
+  },
+  "_QuickBetChips-BSTrWwyw.js": {
+    "file": "assets/QuickBetChips-BSTrWwyw.js",
+    "name": "QuickBetChips",
+    "imports": [
+      "index.html"
+    ]
+  },
+  "_RewardPopup-BfPBXoNT.css": {
+    "file": "assets/RewardPopup-BfPBXoNT.css",
+    "src": "_RewardPopup-BfPBXoNT.css"
+  },
+  "_RewardPopup-oMlpMNz6.js": {
+    "file": "assets/RewardPopup-oMlpMNz6.js",
+    "name": "RewardPopup",
+    "imports": [
+      "index.html",
+      "_c7-neon-aqua-RxXN2v-l.js"
+    ],
+    "css": [
+      "assets/RewardPopup-BfPBXoNT.css"
+    ]
+  },
+  "_SlotMachine-Gj6qukv5.js": {
+    "file": "assets/SlotMachine-Gj6qukv5.js",
+    "name": "SlotMachine",
+    "imports": [
+      "index.html",
+      "_RewardPopup-oMlpMNz6.js",
+      "_c7-neon-aqua-RxXN2v-l.js"
+    ]
+  },
+  "_ThemedSlot-BQIHhRTV.js": {
+    "file": "assets/ThemedSlot-BQIHhRTV.js",
+    "name": "ThemedSlot",
+    "imports": [
+      "index.html",
+      "_input-DWJHXZH0.js",
+      "_dist-CUIIShIL.js",
+      "_useCasinoGame-DJ-HpVtR.js",
+      "_QuickBetChips-BSTrWwyw.js",
+      "_GoldBurstOverlay-DHW9_G9x.js",
+      "_sounds-DCdRgErc.js"
+    ]
+  },
+  "_UonoBottomNav-CYjgVpmW.js": {
+    "file": "assets/UonoBottomNav-CYjgVpmW.js",
+    "name": "UonoBottomNav",
+    "imports": [
+      "index.html",
+      "_tap-DXE52bWa.js"
+    ]
+  },
+  "_activity-BICdSIxU.js": {
+    "file": "assets/activity-BICdSIxU.js",
+    "name": "activity",
+    "imports": [
+      "_createLucideIcon-BITncNkQ.js"
+    ]
+  },
+  "_adminApi-BJAsAtDV.js": {
+    "file": "assets/adminApi-BJAsAtDV.js",
+    "name": "adminApi",
+    "imports": [
+      "index.html"
+    ]
+  },
+  "_arrow-down-to-line-CzNEULjL.js": {
+    "file": "assets/arrow-down-to-line-CzNEULjL.js",
+    "name": "arrow-down-to-line",
+    "imports": [
+      "_createLucideIcon-BITncNkQ.js"
+    ]
+  },
+  "_arrow-left-B_mSi1Yf.js": {
+    "file": "assets/arrow-left-B_mSi1Yf.js",
+    "name": "arrow-left",
+    "imports": [
+      "_createLucideIcon-BITncNkQ.js"
+    ]
+  },
+  "_arrow-right-BunXoBeN.js": {
+    "file": "assets/arrow-right-BunXoBeN.js",
+    "name": "arrow-right",
+    "imports": [
+      "_createLucideIcon-BITncNkQ.js"
+    ]
+  },
+  "_arrow-up-BJlalHOX.js": {
+    "file": "assets/arrow-up-BJlalHOX.js",
+    "name": "arrow-up",
+    "imports": [
+      "_createLucideIcon-BITncNkQ.js"
+    ]
+  },
+  "_arrow-up-down-xdataN6O.js": {
+    "file": "assets/arrow-up-down-xdataN6O.js",
+    "name": "arrow-up-down",
+    "imports": [
+      "_createLucideIcon-BITncNkQ.js"
+    ]
+  },
+  "_arrow-up-from-line-C_BN77Df.js": {
+    "file": "assets/arrow-up-from-line-C_BN77Df.js",
+    "name": "arrow-up-from-line",
+    "imports": [
+      "_createLucideIcon-BITncNkQ.js"
+    ]
+  },
+  "_arrow-up-right-CgSS9B5v.js": {
+    "file": "assets/arrow-up-right-CgSS9B5v.js",
+    "name": "arrow-up-right",
+    "imports": [
+      "_createLucideIcon-BITncNkQ.js"
+    ]
+  },
+  "_ban-C1c_c9Wq.js": {
+    "file": "assets/ban-C1c_c9Wq.js",
+    "name": "ban",
+    "imports": [
+      "_createLucideIcon-BITncNkQ.js"
+    ]
+  },
+  "_bitcoin-CfboraNB.js": {
+    "file": "assets/bitcoin-CfboraNB.js",
+    "name": "bitcoin",
+    "imports": [
+      "_createLucideIcon-BITncNkQ.js"
+    ]
+  },
+  "_bot-Bwjsy2ZW.js": {
+    "file": "assets/bot-Bwjsy2ZW.js",
+    "name": "bot",
+    "imports": [
+      "_createLucideIcon-BITncNkQ.js"
+    ]
+  },
+  "_building-2-DWivd_TQ.js": {
+    "file": "assets/building-2-DWivd_TQ.js",
+    "name": "building-2",
+    "imports": [
+      "_createLucideIcon-BITncNkQ.js"
+    ]
+  },
+  "_c7-neon-aqua-RxXN2v-l.js": {
+    "file": "assets/c7-neon-aqua-RxXN2v-l.js",
+    "name": "c7-neon-aqua"
+  },
+  "_check-D-GMoPV0.js": {
+    "file": "assets/check-D-GMoPV0.js",
+    "name": "check",
+    "imports": [
+      "_createLucideIcon-BITncNkQ.js"
+    ]
+  },
+  "_chevron-down-Byg5LKZ3.js": {
+    "file": "assets/chevron-down-Byg5LKZ3.js",
+    "name": "chevron-down",
+    "imports": [
+      "_createLucideIcon-BITncNkQ.js"
+    ]
+  },
+  "_chevron-right-Bo07lTxU.js": {
+    "file": "assets/chevron-right-Bo07lTxU.js",
+    "name": "chevron-right",
+    "imports": [
+      "_createLucideIcon-BITncNkQ.js"
+    ]
+  },
+  "_chevron-up-e-UVsG4U.js": {
+    "file": "assets/chevron-up-e-UVsG4U.js",
+    "name": "chevron-up",
+    "imports": [
+      "_createLucideIcon-BITncNkQ.js"
+    ]
+  },
+  "_circle-check-B1mx9VCo.js": {
+    "file": "assets/circle-check-B1mx9VCo.js",
+    "name": "circle-check",
+    "imports": [
+      "_createLucideIcon-BITncNkQ.js"
+    ]
+  },
+  "_circle-dot-BAVZPuCy.js": {
+    "file": "assets/circle-dot-BAVZPuCy.js",
+    "name": "circle-dot",
+    "imports": [
+      "_createLucideIcon-BITncNkQ.js"
+    ]
+  },
+  "_circle-x-CvZpIi_U.js": {
+    "file": "assets/circle-x-CvZpIi_U.js",
+    "name": "circle-x",
+    "imports": [
+      "_createLucideIcon-BITncNkQ.js"
+    ]
+  },
+  "_clock-CFnWIu-H.js": {
+    "file": "assets/clock-CFnWIu-H.js",
+    "name": "clock",
+    "imports": [
+      "_createLucideIcon-BITncNkQ.js"
+    ]
+  },
+  "_clsx-CjueKrWZ.js": {
+    "file": "assets/clsx-CjueKrWZ.js",
+    "name": "clsx"
+  },
+  "_coins-B1qp8wP9.js": {
+    "file": "assets/coins-B1qp8wP9.js",
+    "name": "coins",
+    "imports": [
+      "_createLucideIcon-BITncNkQ.js"
+    ]
+  },
+  "_copy-CXLUn6y9.js": {
+    "file": "assets/copy-CXLUn6y9.js",
+    "name": "copy",
+    "imports": [
+      "_createLucideIcon-BITncNkQ.js"
+    ]
+  },
+  "_createLucideIcon-BITncNkQ.js": {
+    "file": "assets/createLucideIcon-BITncNkQ.js",
+    "name": "createLucideIcon",
+    "imports": [
+      "index.html"
+    ]
+  },
+  "_credit-card-Cnw_rYXB.js": {
+    "file": "assets/credit-card-Cnw_rYXB.js",
+    "name": "credit-card",
+    "imports": [
+      "_createLucideIcon-BITncNkQ.js"
+    ]
+  },
+  "_crown-BNVTyifs.js": {
+    "file": "assets/crown-BNVTyifs.js",
+    "name": "crown",
+    "imports": [
+      "_createLucideIcon-BITncNkQ.js"
+    ]
+  },
+  "_dices-CSEIp4V9.js": {
+    "file": "assets/dices-CSEIp4V9.js",
+    "name": "dices",
+    "imports": [
+      "_createLucideIcon-BITncNkQ.js"
+    ]
+  },
+  "_dist-CUIIShIL.js": {
+    "file": "assets/dist-CUIIShIL.js",
+    "name": "dist",
+    "imports": [
+      "index.html"
+    ]
+  },
+  "_dollar-sign-DGs1SHcu.js": {
+    "file": "assets/dollar-sign-DGs1SHcu.js",
+    "name": "dollar-sign",
+    "imports": [
+      "_createLucideIcon-BITncNkQ.js"
+    ]
+  },
+  "_external-link-DZ2oN5CR.js": {
+    "file": "assets/external-link-DZ2oN5CR.js",
+    "name": "external-link",
+    "imports": [
+      "_createLucideIcon-BITncNkQ.js"
+    ]
+  },
+  "_eye-off-B_3nVsjF.js": {
+    "file": "assets/eye-off-B_3nVsjF.js",
+    "name": "eye-off",
+    "imports": [
+      "_createLucideIcon-BITncNkQ.js"
+    ]
+  },
+  "_file-text-B_sukaT3.js": {
+    "file": "assets/file-text-B_sukaT3.js",
+    "name": "file-text",
+    "imports": [
+      "_createLucideIcon-BITncNkQ.js"
+    ]
+  },
+  "_flame-DbZg2z6t.js": {
+    "file": "assets/flame-DbZg2z6t.js",
+    "name": "flame",
+    "imports": [
+      "_createLucideIcon-BITncNkQ.js"
+    ]
+  },
+  "_gamepad-2-PN7h4r6q.js": {
+    "file": "assets/gamepad-2-PN7h4r6q.js",
+    "name": "gamepad-2",
+    "imports": [
+      "_createLucideIcon-BITncNkQ.js"
+    ]
+  },
+  "_gift-CiiL1Iwa.js": {
+    "file": "assets/gift-CiiL1Iwa.js",
+    "name": "gift",
+    "imports": [
+      "_createLucideIcon-BITncNkQ.js"
+    ]
+  },
+  "_input-DWJHXZH0.js": {
+    "file": "assets/input-DWJHXZH0.js",
+    "name": "input",
+    "imports": [
+      "index.html",
+      "_tap-DXE52bWa.js",
+      "_clsx-CjueKrWZ.js",
+      "_utils-Cz4MqTg-.js"
+    ]
+  },
+  "_key-round-COd_UqZQ.js": {
+    "file": "assets/key-round-COd_UqZQ.js",
+    "name": "key-round",
+    "imports": [
+      "_createLucideIcon-BITncNkQ.js"
+    ]
+  },
+  "_loader-circle-B8dvvsf2.js": {
+    "file": "assets/loader-circle-B8dvvsf2.js",
+    "name": "loader-circle",
+    "imports": [
+      "_createLucideIcon-BITncNkQ.js"
+    ]
+  },
+  "_lock-B9-PnFjP.js": {
+    "file": "assets/lock-B9-PnFjP.js",
+    "name": "lock",
+    "imports": [
+      "_createLucideIcon-BITncNkQ.js"
+    ]
+  },
+  "_log-out-DWnCo70l.js": {
+    "file": "assets/log-out-DWnCo70l.js",
+    "name": "log-out",
+    "imports": [
+      "_createLucideIcon-BITncNkQ.js"
+    ]
+  },
+  "_mail-B5Dt36Hk.js": {
+    "file": "assets/mail-B5Dt36Hk.js",
+    "name": "mail",
+    "imports": [
+      "_createLucideIcon-BITncNkQ.js"
+    ]
+  },
+  "_plus-B-fqE4eg.js": {
+    "file": "assets/plus-B-fqE4eg.js",
+    "name": "plus",
+    "imports": [
+      "_createLucideIcon-BITncNkQ.js"
+    ]
+  },
+  "_refresh-cw-COf-A63T.js": {
+    "file": "assets/refresh-cw-COf-A63T.js",
+    "name": "refresh-cw",
+    "imports": [
+      "_createLucideIcon-BITncNkQ.js"
+    ]
+  },
+  "_save-Df_kfQ2i.js": {
+    "file": "assets/save-Df_kfQ2i.js",
+    "name": "save",
+    "imports": [
+      "_createLucideIcon-BITncNkQ.js"
+    ]
+  },
+  "_search-BMWAKPVW.js": {
+    "file": "assets/search-BMWAKPVW.js",
+    "name": "search",
+    "imports": [
+      "_createLucideIcon-BITncNkQ.js"
+    ]
+  },
+  "_select-BNMYQtMa.js": {
+    "file": "assets/select-BNMYQtMa.js",
+    "name": "select",
+    "imports": [
+      "index.html",
+      "_input-DWJHXZH0.js",
+      "_check-D-GMoPV0.js",
+      "_chevron-down-Byg5LKZ3.js",
+      "_chevron-up-e-UVsG4U.js",
+      "_utils-Cz4MqTg-.js"
+    ]
+  },
+  "_settings-CgEkdisa.js": {
+    "file": "assets/settings-CgEkdisa.js",
+    "name": "settings",
+    "imports": [
+      "_createLucideIcon-BITncNkQ.js"
+    ]
+  },
+  "_shell-BLZ5rdsi.js": {
+    "file": "assets/shell-BLZ5rdsi.js",
+    "name": "shell",
+    "imports": [
+      "index.html",
+      "_arrow-left-B_mSi1Yf.js",
+      "_chevron-right-Bo07lTxU.js",
+      "_coins-B1qp8wP9.js",
+      "_utils-Cz4MqTg-.js",
+      "_UonoBottomNav-CYjgVpmW.js"
+    ]
+  },
+  "_shield-CrLb9gnO.js": {
+    "file": "assets/shield-CrLb9gnO.js",
+    "name": "shield",
+    "imports": [
+      "_createLucideIcon-BITncNkQ.js"
+    ]
+  },
+  "_shield-alert-DSpfBWsS.js": {
+    "file": "assets/shield-alert-DSpfBWsS.js",
+    "name": "shield-alert",
+    "imports": [
+      "_createLucideIcon-BITncNkQ.js"
+    ]
+  },
+  "_shield-check-D282WMnl.js": {
+    "file": "assets/shield-check-D282WMnl.js",
+    "name": "shield-check",
+    "imports": [
+      "_createLucideIcon-BITncNkQ.js"
+    ]
+  },
+  "_smartphone-teEPz0mI.js": {
+    "file": "assets/smartphone-teEPz0mI.js",
+    "name": "smartphone",
+    "imports": [
+      "_createLucideIcon-BITncNkQ.js"
+    ]
+  },
+  "_sounds-DCdRgErc.js": {
+    "file": "assets/sounds-DCdRgErc.js",
+    "name": "sounds"
+  },
+  "_sparkles-BN8lqK5d.js": {
+    "file": "assets/sparkles-BN8lqK5d.js",
+    "name": "sparkles",
+    "imports": [
+      "_createLucideIcon-BITncNkQ.js"
+    ]
+  },
+  "_tap-DXE52bWa.js": {
+    "file": "assets/tap-DXE52bWa.js",
+    "name": "tap",
+    "imports": [
+      "index.html"
+    ],
+    "dynamicImports": [
+      "node_modules/@capacitor/haptics/dist/esm/index.js"
+    ]
+  },
+  "_three.module-Dw4W2Xny.js": {
+    "file": "assets/three.module-Dw4W2Xny.js",
+    "name": "three.module"
+  },
+  "_trending-up-Bpt0B-kT.js": {
+    "file": "assets/trending-up-Bpt0B-kT.js",
+    "name": "trending-up",
+    "imports": [
+      "_createLucideIcon-BITncNkQ.js"
+    ]
+  },
+  "_triangle-alert-D3ejZ6c1.js": {
+    "file": "assets/triangle-alert-D3ejZ6c1.js",
+    "name": "triangle-alert",
+    "imports": [
+      "_createLucideIcon-BITncNkQ.js"
+    ]
+  },
+  "_trophy-Cfk2yUWT.js": {
+    "file": "assets/trophy-Cfk2yUWT.js",
+    "name": "trophy",
+    "imports": [
+      "_createLucideIcon-BITncNkQ.js"
+    ]
+  },
+  "_useCasinoGame-DJ-HpVtR.js": {
+    "file": "assets/useCasinoGame-DJ-HpVtR.js",
+    "name": "useCasinoGame",
+    "imports": [
+      "index.html",
+      "_dist-CUIIShIL.js"
+    ]
+  },
+  "_useDtxBalance-yl2mVrBy.js": {
+    "file": "assets/useDtxBalance-yl2mVrBy.js",
+    "name": "useDtxBalance",
+    "imports": [
+      "index.html",
+      "_useCasinoGame-DJ-HpVtR.js"
+    ]
+  },
+  "_users-BPo7ZlDe.js": {
+    "file": "assets/users-BPo7ZlDe.js",
+    "name": "users",
+    "imports": [
+      "_createLucideIcon-BITncNkQ.js"
+    ]
+  },
+  "_utils-Cz4MqTg-.js": {
+    "file": "assets/utils-Cz4MqTg-.js",
+    "name": "utils",
+    "imports": [
+      "_clsx-CjueKrWZ.js"
+    ]
+  },
+  "_wallet-UIYXLjwd.js": {
+    "file": "assets/wallet-UIYXLjwd.js",
+    "name": "wallet",
+    "imports": [
+      "_createLucideIcon-BITncNkQ.js"
+    ]
+  },
+  "_x-ByikElx-.js": {
+    "file": "assets/x-ByikElx-.js",
+    "name": "x",
+    "imports": [
+      "_createLucideIcon-BITncNkQ.js"
+    ]
+  },
+  "_zap-BN29dsjK.js": {
+    "file": "assets/zap-BN29dsjK.js",
+    "name": "zap",
+    "imports": [
+      "_createLucideIcon-BITncNkQ.js"
+    ]
+  },
+  "index.html": {
+    "file": "assets/index-p20qvUb_.js",
+    "name": "index",
+    "src": "index.html",
+    "isEntry": true,
+    "dynamicImports": [
+      "src/components/LobbyScene.tsx",
+      "src/pages/Wallet.tsx",
+      "src/pages/Games.tsx",
+      "src/pages/Profile.tsx",
+      "src/pages/GamePage.tsx",
+      "src/pages/dtx/DtxDepositPage.tsx",
+      "src/pages/dtx/DtxWithdrawPage.tsx",
+      "src/pages/dtx/DtxVipPage.tsx",
+      "src/pages/dtx/DtxPromotionsPage.tsx",
+      "src/pages/dtx/DtxLeaderboardPage.tsx",
+      "src/pages/dtx/DtxReferPage.tsx",
+      "src/pages/dtx/DtxSettingsPage.tsx",
+      "src/pages/dtx/games/UnoGamePage.tsx",
+      "src/pages/Premium.tsx",
+      "src/pages/CasinoPage.tsx",
+      "src/pages/C7Showcase.tsx",
+      "src/pages/CasinoProfile.tsx",
+      "src/pages/CrashGame.tsx",
+      "src/pages/MinesGame.tsx",
+      "src/pages/PlinkoGame.tsx",
+      "src/pages/CasinoVIP.tsx",
+      "src/pages/Admin.tsx",
+      "src/pages/AdminLogin.tsx",
+      "src/pages/AdminPayments.tsx",
+      "src/pages/AdminWithdrawals.tsx",
+      "src/pages/AdminLive.tsx",
+      "src/pages/AdminHealth.tsx",
+      "src/pages/AdminSettings.tsx",
+      "src/pages/AdminUsersPage.tsx",
+      "src/pages/AdminBonusesPage.tsx",
+      "src/pages/AdminAuditPage.tsx",
+      "src/pages/AdminResetPassword.tsx"
+    ],
+    "css": [
+      "assets/index-DxDlGV52.css"
+    ]
+  },
+  "node_modules/@capacitor/haptics/dist/esm/index.js": {
+    "file": "assets/esm-CQ-sEH0Y.js",
+    "name": "esm",
+    "src": "node_modules/@capacitor/haptics/dist/esm/index.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_tap-DXE52bWa.js"
+    ],
+    "dynamicImports": [
+      "node_modules/@capacitor/haptics/dist/esm/web.js"
+    ]
+  },
+  "node_modules/@capacitor/haptics/dist/esm/web.js": {
+    "file": "assets/web-DVIs1Wkh.js",
+    "name": "web",
+    "src": "node_modules/@capacitor/haptics/dist/esm/web.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "_tap-DXE52bWa.js",
+      "node_modules/@capacitor/haptics/dist/esm/index.js"
+    ]
+  },
+  "node_modules/qrcode.react/lib/esm/index.js": {
+    "file": "assets/esm-BkprBDYi.js",
+    "name": "esm",
+    "src": "node_modules/qrcode.react/lib/esm/index.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html"
+    ]
+  },
+  "src/components/LobbyScene.tsx": {
+    "file": "assets/LobbyScene-ZjFh6J7y.js",
+    "name": "LobbyScene",
+    "src": "src/components/LobbyScene.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_three.module-Dw4W2Xny.js"
+    ]
+  },
+  "src/components/ProfileScene.tsx": {
+    "file": "assets/ProfileScene-DA4XMSjI.js",
+    "name": "ProfileScene",
+    "src": "src/components/ProfileScene.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_three.module-Dw4W2Xny.js"
+    ]
+  },
+  "src/components/admin/UsersScene.tsx": {
+    "file": "assets/UsersScene-D-o-qASl.js",
+    "name": "UsersScene",
+    "src": "src/components/admin/UsersScene.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_three.module-Dw4W2Xny.js"
+    ]
+  },
+  "src/components/admin/V8Scene.tsx": {
+    "file": "assets/V8Scene-CVW1USUK.js",
+    "name": "V8Scene",
+    "src": "src/components/admin/V8Scene.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_three.module-Dw4W2Xny.js"
+    ]
+  },
+  "src/components/casino/CoinflipGame.tsx": {
+    "file": "assets/CoinflipGame-DyRk22MM.js",
+    "name": "CoinflipGame",
+    "src": "src/components/casino/CoinflipGame.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_input-DWJHXZH0.js",
+      "_coins-B1qp8wP9.js",
+      "_AutoBetPanel-CHL8Pld1.js",
+      "_dist-CUIIShIL.js",
+      "_useCasinoGame-DJ-HpVtR.js",
+      "_QuickBetChips-BSTrWwyw.js",
+      "_sounds-DCdRgErc.js"
+    ]
+  },
+  "src/components/casino/DiceGame.tsx": {
+    "file": "assets/DiceGame-CN00LjKL.js",
+    "name": "DiceGame",
+    "src": "src/components/casino/DiceGame.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_input-DWJHXZH0.js",
+      "_arrow-up-down-xdataN6O.js",
+      "_dices-CSEIp4V9.js",
+      "_AutoBetPanel-CHL8Pld1.js",
+      "_dist-CUIIShIL.js",
+      "_useCasinoGame-DJ-HpVtR.js",
+      "_QuickBetChips-BSTrWwyw.js",
+      "_sounds-DCdRgErc.js"
+    ]
+  },
+  "src/components/casino/HiloGame.tsx": {
+    "file": "assets/HiloGame-BZaCrxDt.js",
+    "name": "HiloGame",
+    "src": "src/components/casino/HiloGame.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_input-DWJHXZH0.js",
+      "_arrow-up-BJlalHOX.js",
+      "_credit-card-Cnw_rYXB.js",
+      "_dist-CUIIShIL.js",
+      "_useCasinoGame-DJ-HpVtR.js",
+      "_QuickBetChips-BSTrWwyw.js",
+      "_sounds-DCdRgErc.js"
+    ],
+    "dynamicImports": [
+      "index.html"
+    ]
+  },
+  "src/components/casino/KenoGame.tsx": {
+    "file": "assets/KenoGame-jOrmkB8B.js",
+    "name": "KenoGame",
+    "src": "src/components/casino/KenoGame.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_input-DWJHXZH0.js",
+      "_createLucideIcon-BITncNkQ.js",
+      "_AutoBetPanel-CHL8Pld1.js",
+      "_dist-CUIIShIL.js",
+      "_useCasinoGame-DJ-HpVtR.js",
+      "_QuickBetChips-BSTrWwyw.js",
+      "_sounds-DCdRgErc.js"
+    ]
+  },
+  "src/components/casino/LimboGame.tsx": {
+    "file": "assets/LimboGame-W0im9KfW.js",
+    "name": "LimboGame",
+    "src": "src/components/casino/LimboGame.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_input-DWJHXZH0.js",
+      "_createLucideIcon-BITncNkQ.js",
+      "_AutoBetPanel-CHL8Pld1.js",
+      "_dist-CUIIShIL.js",
+      "_useCasinoGame-DJ-HpVtR.js",
+      "_QuickBetChips-BSTrWwyw.js",
+      "_sounds-DCdRgErc.js"
+    ]
+  },
+  "src/components/casino/MinesGame.tsx": {
+    "file": "assets/MinesGame-HVXoyRXK.js",
+    "name": "MinesGame",
+    "src": "src/components/casino/MinesGame.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_select-BNMYQtMa.js",
+      "_input-DWJHXZH0.js",
+      "_createLucideIcon-BITncNkQ.js",
+      "_dist-CUIIShIL.js",
+      "_useCasinoGame-DJ-HpVtR.js",
+      "_QuickBetChips-BSTrWwyw.js",
+      "_sounds-DCdRgErc.js"
+    ]
+  },
+  "src/components/casino/PlinkoGame.tsx": {
+    "file": "assets/PlinkoGame-BoippEZ5.js",
+    "name": "PlinkoGame",
+    "src": "src/components/casino/PlinkoGame.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_select-BNMYQtMa.js",
+      "_input-DWJHXZH0.js",
+      "_circle-dot-BAVZPuCy.js",
+      "_AutoBetPanel-CHL8Pld1.js",
+      "_dist-CUIIShIL.js",
+      "_useCasinoGame-DJ-HpVtR.js",
+      "_QuickBetChips-BSTrWwyw.js",
+      "_sounds-DCdRgErc.js"
+    ]
+  },
+  "src/components/casino/RouletteGame.tsx": {
+    "file": "assets/RouletteGame-BRmN0in1.js",
+    "name": "RouletteGame",
+    "src": "src/components/casino/RouletteGame.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_input-DWJHXZH0.js",
+      "_circle-dot-BAVZPuCy.js",
+      "_dist-CUIIShIL.js",
+      "_useCasinoGame-DJ-HpVtR.js",
+      "_QuickBetChips-BSTrWwyw.js",
+      "_sounds-DCdRgErc.js"
+    ]
+  },
+  "src/components/casino/SlotsGame.tsx": {
+    "file": "assets/SlotsGame-Db93a3Db.js",
+    "name": "SlotsGame",
+    "src": "src/components/casino/SlotsGame.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_input-DWJHXZH0.js",
+      "_sparkles-BN8lqK5d.js",
+      "_dist-CUIIShIL.js",
+      "_useCasinoGame-DJ-HpVtR.js",
+      "_QuickBetChips-BSTrWwyw.js",
+      "_GoldBurstOverlay-DHW9_G9x.js",
+      "_sounds-DCdRgErc.js"
+    ]
+  },
+  "src/components/casino/WheelGame.tsx": {
+    "file": "assets/WheelGame-CwZ_9cf0.js",
+    "name": "WheelGame",
+    "src": "src/components/casino/WheelGame.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_input-DWJHXZH0.js",
+      "_circle-dot-BAVZPuCy.js",
+      "_AutoBetPanel-CHL8Pld1.js",
+      "_dist-CUIIShIL.js",
+      "_useCasinoGame-DJ-HpVtR.js",
+      "_QuickBetChips-BSTrWwyw.js",
+      "_sounds-DCdRgErc.js"
+    ]
+  },
+  "src/components/casino/WildApeSlot.tsx": {
+    "file": "assets/WildApeSlot-BKGHk6Un.js",
+    "name": "WildApeSlot",
+    "src": "src/components/casino/WildApeSlot.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_input-DWJHXZH0.js",
+      "_dist-CUIIShIL.js",
+      "_useCasinoGame-DJ-HpVtR.js",
+      "_QuickBetChips-BSTrWwyw.js",
+      "_GoldBurstOverlay-DHW9_G9x.js",
+      "_sounds-DCdRgErc.js"
+    ]
+  },
+  "src/games/shared/CardGames.tsx": {
+    "file": "assets/CardGames-DtQiQfJS.js",
+    "name": "CardGames",
+    "src": "src/games/shared/CardGames.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_input-DWJHXZH0.js",
+      "_dist-CUIIShIL.js",
+      "_useCasinoGame-DJ-HpVtR.js",
+      "_QuickBetChips-BSTrWwyw.js",
+      "_sounds-DCdRgErc.js"
+    ]
+  },
+  "src/games/shared/CrashBase.tsx": {
+    "file": "assets/CrashBase-DPPSgiPm.js",
+    "name": "CrashBase",
+    "src": "src/games/shared/CrashBase.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_arrow-left-B_mSi1Yf.js",
+      "_bot-Bwjsy2ZW.js",
+      "_chevron-down-Byg5LKZ3.js",
+      "_dist-CUIIShIL.js",
+      "_useCasinoGame-DJ-HpVtR.js",
+      "_UonoBottomNav-CYjgVpmW.js",
+      "_sounds-DCdRgErc.js"
+    ]
+  },
+  "src/pages/Admin.tsx": {
+    "file": "assets/Admin-BEEhud8z.js",
+    "name": "Admin",
+    "src": "src/pages/Admin.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_select-BNMYQtMa.js",
+      "_AdminUsers-CeqRxSDt.js",
+      "_input-DWJHXZH0.js",
+      "_AreaChart-DCJkcKZm.js",
+      "_createLucideIcon-BITncNkQ.js",
+      "_activity-BICdSIxU.js",
+      "_arrow-down-to-line-CzNEULjL.js",
+      "_arrow-up-from-line-C_BN77Df.js",
+      "_ban-C1c_c9Wq.js",
+      "_building-2-DWivd_TQ.js",
+      "_check-D-GMoPV0.js",
+      "_chevron-right-Bo07lTxU.js",
+      "_circle-check-B1mx9VCo.js",
+      "_circle-x-CvZpIi_U.js",
+      "_clock-CFnWIu-H.js",
+      "_copy-CXLUn6y9.js",
+      "_crown-BNVTyifs.js",
+      "_dices-CSEIp4V9.js",
+      "_dollar-sign-DGs1SHcu.js",
+      "_external-link-DZ2oN5CR.js",
+      "_eye-off-B_3nVsjF.js",
+      "_shield-alert-DSpfBWsS.js",
+      "_file-text-B_sukaT3.js",
+      "_flame-DbZg2z6t.js",
+      "_gamepad-2-PN7h4r6q.js",
+      "_gift-CiiL1Iwa.js",
+      "_key-round-COd_UqZQ.js",
+      "_loader-circle-B8dvvsf2.js",
+      "_lock-B9-PnFjP.js",
+      "_log-out-DWnCo70l.js",
+      "_mail-B5Dt36Hk.js",
+      "_plus-B-fqE4eg.js",
+      "_refresh-cw-COf-A63T.js",
+      "_save-Df_kfQ2i.js",
+      "_search-BMWAKPVW.js",
+      "_settings-CgEkdisa.js",
+      "_shield-check-D282WMnl.js",
+      "_shield-CrLb9gnO.js",
+      "_sparkles-BN8lqK5d.js",
+      "_trending-up-Bpt0B-kT.js",
+      "_triangle-alert-D3ejZ6c1.js",
+      "_trophy-Cfk2yUWT.js",
+      "_users-BPo7ZlDe.js",
+      "_wallet-UIYXLjwd.js",
+      "_x-ByikElx-.js",
+      "_zap-BN29dsjK.js",
+      "_dist-CUIIShIL.js",
+      "_utils-Cz4MqTg-.js",
+      "_adminApi-BJAsAtDV.js"
+    ],
+    "dynamicImports": [
+      "src/components/admin/V8Scene.tsx",
+      "index.html"
+    ]
+  },
+  "src/pages/AdminAuditPage.tsx": {
+    "file": "assets/AdminAuditPage-C-JsjDbj.js",
+    "name": "AdminAuditPage",
+    "src": "src/pages/AdminAuditPage.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_arrow-left-B_mSi1Yf.js",
+      "_file-text-B_sukaT3.js",
+      "_loader-circle-B8dvvsf2.js",
+      "_refresh-cw-COf-A63T.js",
+      "_search-BMWAKPVW.js",
+      "_dist-CUIIShIL.js"
+    ]
+  },
+  "src/pages/AdminBonusesPage.tsx": {
+    "file": "assets/AdminBonusesPage-DXMV2ky0.js",
+    "name": "AdminBonusesPage",
+    "src": "src/pages/AdminBonusesPage.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_createLucideIcon-BITncNkQ.js",
+      "_arrow-left-B_mSi1Yf.js",
+      "_circle-check-B1mx9VCo.js",
+      "_dollar-sign-DGs1SHcu.js",
+      "_gift-CiiL1Iwa.js",
+      "_loader-circle-B8dvvsf2.js",
+      "_plus-B-fqE4eg.js",
+      "_save-Df_kfQ2i.js",
+      "_search-BMWAKPVW.js",
+      "_users-BPo7ZlDe.js",
+      "_x-ByikElx-.js",
+      "_dist-CUIIShIL.js"
+    ]
+  },
+  "src/pages/AdminHealth.tsx": {
+    "file": "assets/AdminHealth-5YKYrJb6.js",
+    "name": "AdminHealth",
+    "src": "src/pages/AdminHealth.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_activity-BICdSIxU.js",
+      "_arrow-left-B_mSi1Yf.js",
+      "_circle-check-B1mx9VCo.js",
+      "_circle-x-CvZpIi_U.js",
+      "_loader-circle-B8dvvsf2.js",
+      "_refresh-cw-COf-A63T.js",
+      "_triangle-alert-D3ejZ6c1.js"
+    ]
+  },
+  "src/pages/AdminLive.tsx": {
+    "file": "assets/AdminLive-Dyh8DWTy.js",
+    "name": "AdminLive",
+    "src": "src/pages/AdminLive.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_AreaChart-DCJkcKZm.js",
+      "_createLucideIcon-BITncNkQ.js",
+      "_activity-BICdSIxU.js",
+      "_arrow-left-B_mSi1Yf.js",
+      "_arrow-up-right-CgSS9B5v.js",
+      "_clock-CFnWIu-H.js",
+      "_coins-B1qp8wP9.js",
+      "_refresh-cw-COf-A63T.js",
+      "_shield-check-D282WMnl.js",
+      "_trending-up-Bpt0B-kT.js",
+      "_triangle-alert-D3ejZ6c1.js",
+      "_trophy-Cfk2yUWT.js",
+      "_users-BPo7ZlDe.js",
+      "_wallet-UIYXLjwd.js"
+    ]
+  },
+  "src/pages/AdminLogin.tsx": {
+    "file": "assets/AdminLogin-QCkCB_fS.js",
+    "name": "AdminLogin",
+    "src": "src/pages/AdminLogin.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_arrow-right-BunXoBeN.js",
+      "_check-D-GMoPV0.js",
+      "_key-round-COd_UqZQ.js",
+      "_loader-circle-B8dvvsf2.js",
+      "_lock-B9-PnFjP.js",
+      "_mail-B5Dt36Hk.js",
+      "_shield-CrLb9gnO.js",
+      "_triangle-alert-D3ejZ6c1.js"
+    ]
+  },
+  "src/pages/AdminPayments.tsx": {
+    "file": "assets/AdminPayments-D2LxcL1C.js",
+    "name": "AdminPayments",
+    "src": "src/pages/AdminPayments.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_createLucideIcon-BITncNkQ.js",
+      "_arrow-left-B_mSi1Yf.js",
+      "_ban-C1c_c9Wq.js",
+      "_circle-check-B1mx9VCo.js",
+      "_circle-x-CvZpIi_U.js",
+      "_clock-CFnWIu-H.js",
+      "_copy-CXLUn6y9.js",
+      "_credit-card-Cnw_rYXB.js",
+      "_loader-circle-B8dvvsf2.js",
+      "_refresh-cw-COf-A63T.js",
+      "_search-BMWAKPVW.js",
+      "_triangle-alert-D3ejZ6c1.js",
+      "_dist-CUIIShIL.js",
+      "_adminApi-BJAsAtDV.js"
+    ]
+  },
+  "src/pages/AdminResetPassword.tsx": {
+    "file": "assets/AdminResetPassword-B4j43nvn.js",
+    "name": "AdminResetPassword",
+    "src": "src/pages/AdminResetPassword.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_check-D-GMoPV0.js",
+      "_loader-circle-B8dvvsf2.js",
+      "_lock-B9-PnFjP.js",
+      "_shield-CrLb9gnO.js"
+    ]
+  },
+  "src/pages/AdminSettings.tsx": {
+    "file": "assets/AdminSettings-BXHpCcmn.js",
+    "name": "AdminSettings",
+    "src": "src/pages/AdminSettings.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_input-DWJHXZH0.js",
+      "_arrow-right-BunXoBeN.js",
+      "_check-D-GMoPV0.js",
+      "_circle-check-B1mx9VCo.js",
+      "_circle-x-CvZpIi_U.js",
+      "_copy-CXLUn6y9.js",
+      "_eye-off-B_3nVsjF.js",
+      "_shield-alert-DSpfBWsS.js",
+      "_loader-circle-B8dvvsf2.js",
+      "_refresh-cw-COf-A63T.js",
+      "_save-Df_kfQ2i.js",
+      "_shield-CrLb9gnO.js",
+      "_triangle-alert-D3ejZ6c1.js",
+      "_dist-CUIIShIL.js",
+      "_adminApi-BJAsAtDV.js"
+    ]
+  },
+  "src/pages/AdminUsersPage.tsx": {
+    "file": "assets/AdminUsersPage-BsIAkTHk.js",
+    "name": "AdminUsersPage",
+    "src": "src/pages/AdminUsersPage.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_AdminUsers-CeqRxSDt.js",
+      "_arrow-left-B_mSi1Yf.js"
+    ]
+  },
+  "src/pages/AdminWithdrawals.tsx": {
+    "file": "assets/AdminWithdrawals-Djsz09_0.js",
+    "name": "AdminWithdrawals",
+    "src": "src/pages/AdminWithdrawals.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_createLucideIcon-BITncNkQ.js",
+      "_arrow-left-B_mSi1Yf.js",
+      "_ban-C1c_c9Wq.js",
+      "_circle-check-B1mx9VCo.js",
+      "_circle-x-CvZpIi_U.js",
+      "_clock-CFnWIu-H.js",
+      "_dollar-sign-DGs1SHcu.js",
+      "_loader-circle-B8dvvsf2.js",
+      "_refresh-cw-COf-A63T.js",
+      "_trending-up-Bpt0B-kT.js",
+      "_triangle-alert-D3ejZ6c1.js",
+      "_wallet-UIYXLjwd.js",
+      "_dist-CUIIShIL.js",
+      "_adminApi-BJAsAtDV.js"
+    ]
+  },
+  "src/pages/C7Showcase.tsx": {
+    "file": "assets/C7Showcase-DF4GICF4.js",
+    "name": "C7Showcase",
+    "src": "src/pages/C7Showcase.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_RewardPopup-oMlpMNz6.js",
+      "_CasinoBottomNav-BKdImrHc.js",
+      "_SlotMachine-Gj6qukv5.js",
+      "_c7-neon-aqua-RxXN2v-l.js"
+    ]
+  },
+  "src/pages/CasinoPage.tsx": {
+    "file": "assets/CasinoPage-D_gBh73b.js",
+    "name": "CasinoPage",
+    "src": "src/pages/CasinoPage.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_CasinoBottomNav-BKdImrHc.js",
+      "_SlotMachine-Gj6qukv5.js",
+      "_c7-neon-aqua-RxXN2v-l.js"
+    ]
+  },
+  "src/pages/CasinoProfile.tsx": {
+    "file": "assets/CasinoProfile-VananvmY.js",
+    "name": "CasinoProfile",
+    "src": "src/pages/CasinoProfile.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_CasinoBottomNav-BKdImrHc.js",
+      "_c7-neon-aqua-RxXN2v-l.js"
+    ],
+    "dynamicImports": [
+      "src/components/ProfileScene.tsx"
+    ]
+  },
+  "src/pages/CasinoVIP.tsx": {
+    "file": "assets/CasinoVIP-B0PxL02Z.js",
+    "name": "CasinoVIP",
+    "src": "src/pages/CasinoVIP.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_CasinoBottomNav-BKdImrHc.js",
+      "_c7-neon-aqua-RxXN2v-l.js"
+    ]
+  },
+  "src/pages/CrashGame.tsx": {
+    "file": "assets/CrashGame-CRL4lu-n.js",
+    "name": "CrashGame",
+    "src": "src/pages/CrashGame.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_RewardPopup-oMlpMNz6.js",
+      "_c7-neon-aqua-RxXN2v-l.js"
+    ]
+  },
+  "src/pages/GamePage.tsx": {
+    "file": "assets/GamePage-BBNfk5rL.js",
+    "name": "GamePage",
+    "src": "src/pages/GamePage.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html"
+    ],
+    "dynamicImports": [
+      "src/pages/dtx/games/ComingSoonPage.tsx",
+      "src/pages/dtx/games/LiveComingSoonPage.tsx",
+      "src/pages/dtx/games/AviatorPage.tsx",
+      "src/pages/dtx/games/Aviator2Page.tsx",
+      "src/pages/dtx/games/JetXPage.tsx",
+      "src/pages/dtx/games/AviatrixPage.tsx",
+      "src/pages/dtx/games/CanadoPage.tsx",
+      "src/pages/dtx/games/ZeppelinPage.tsx",
+      "src/pages/dtx/games/CrashPage.tsx",
+      "src/pages/dtx/games/MinesPage.tsx",
+      "src/pages/dtx/games/PlinkoPage.tsx",
+      "src/pages/dtx/games/DicePage.tsx",
+      "src/pages/dtx/games/HiloPage.tsx",
+      "src/pages/dtx/games/WheelPage.tsx",
+      "src/pages/dtx/games/LimboPage.tsx",
+      "src/pages/dtx/games/KenoPage.tsx",
+      "src/pages/dtx/games/CoinflipPage.tsx",
+      "src/pages/dtx/games/UonoSlotWinnerPage.tsx",
+      "src/pages/dtx/games/CricketXPage.tsx",
+      "src/pages/dtx/games/TeenPattiPage.tsx",
+      "src/pages/dtx/games/RummyPage.tsx",
+      "src/pages/dtx/games/LudoPage.tsx",
+      "src/pages/dtx/games/DragonTigerPage.tsx",
+      "src/pages/dtx/games/AndarBaharPage.tsx",
+      "src/pages/dtx/games/BlackjackPage.tsx",
+      "src/pages/dtx/games/BaccaratPage.tsx",
+      "src/pages/dtx/games/GatesOlympusPage.tsx",
+      "src/pages/dtx/games/SweetBonanzaPage.tsx",
+      "src/pages/dtx/games/FruitPartyPage.tsx",
+      "src/pages/dtx/games/BigBassPage.tsx",
+      "src/pages/dtx/games/StarlightPage.tsx",
+      "src/pages/dtx/games/WolfGoldPage.tsx",
+      "src/pages/dtx/games/WildApePage.tsx",
+      "src/pages/dtx/games/BookOfDeadPage.tsx",
+      "src/pages/dtx/games/StarburstPage.tsx",
+      "src/pages/dtx/games/BuffaloKingPage.tsx",
+      "src/pages/dtx/games/CrazyTimePage.tsx",
+      "src/pages/dtx/games/LiveRoulettePage.tsx",
+      "src/pages/dtx/games/MonopolyLivePage.tsx",
+      "src/pages/dtx/games/HappyFishingPage.tsx",
+      "src/pages/dtx/games/OceanKingPage.tsx",
+      "src/pages/dtx/games/FishHunterPage.tsx",
+      "src/pages/dtx/games/DeepSeaPage.tsx",
+      "src/pages/dtx/games/BombFishingPage.tsx",
+      "src/pages/dtx/games/DragonKingPage.tsx"
+    ]
+  },
+  "src/pages/Games.tsx": {
+    "file": "assets/Games-BT88xdZ6.js",
+    "name": "Games",
+    "src": "src/pages/Games.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_flame-DbZg2z6t.js",
+      "_gamepad-2-PN7h4r6q.js",
+      "_search-BMWAKPVW.js"
+    ]
+  },
+  "src/pages/MinesGame.tsx": {
+    "file": "assets/MinesGame-CbQQ4gdD.js",
+    "name": "MinesGame",
+    "src": "src/pages/MinesGame.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_RewardPopup-oMlpMNz6.js",
+      "_c7-neon-aqua-RxXN2v-l.js"
+    ]
+  },
+  "src/pages/PlinkoGame.tsx": {
+    "file": "assets/PlinkoGame-Ci7bsNal.js",
+    "name": "PlinkoGame",
+    "src": "src/pages/PlinkoGame.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_RewardPopup-oMlpMNz6.js",
+      "_c7-neon-aqua-RxXN2v-l.js"
+    ]
+  },
+  "src/pages/Premium.tsx": {
+    "file": "assets/Premium-xwm_PpcN.js",
+    "name": "Premium",
+    "src": "src/pages/Premium.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_c7-neon-aqua-RxXN2v-l.js"
+    ]
+  },
+  "src/pages/Profile.tsx": {
+    "file": "assets/Profile-DCqKF3f9.js",
+    "name": "Profile",
+    "src": "src/pages/Profile.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_arrow-up-from-line-C_BN77Df.js",
+      "_chevron-right-Bo07lTxU.js",
+      "_crown-BNVTyifs.js",
+      "_gift-CiiL1Iwa.js",
+      "_log-out-DWnCo70l.js",
+      "_settings-CgEkdisa.js",
+      "_trophy-Cfk2yUWT.js",
+      "_users-BPo7ZlDe.js",
+      "_wallet-UIYXLjwd.js"
+    ],
+    "dynamicImports": [
+      "src/components/ProfileScene.tsx"
+    ]
+  },
+  "src/pages/Wallet.tsx": {
+    "file": "assets/Wallet-uU6OXZbA.js",
+    "name": "Wallet",
+    "src": "src/pages/Wallet.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_createLucideIcon-BITncNkQ.js",
+      "_arrow-down-to-line-CzNEULjL.js",
+      "_arrow-up-from-line-C_BN77Df.js",
+      "_bitcoin-CfboraNB.js",
+      "_credit-card-Cnw_rYXB.js",
+      "_refresh-cw-COf-A63T.js",
+      "_sparkles-BN8lqK5d.js",
+      "_trending-up-Bpt0B-kT.js",
+      "_wallet-UIYXLjwd.js"
+    ]
+  },
+  "src/pages/dtx/DtxDepositPage.tsx": {
+    "file": "assets/DtxDepositPage-B98JvKHj.js",
+    "name": "DtxDepositPage",
+    "src": "src/pages/dtx/DtxDepositPage.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_arrow-left-B_mSi1Yf.js",
+      "_copy-CXLUn6y9.js",
+      "_gift-CiiL1Iwa.js",
+      "_loader-circle-B8dvvsf2.js",
+      "_lock-B9-PnFjP.js",
+      "_refresh-cw-COf-A63T.js",
+      "_shield-check-D282WMnl.js",
+      "_sparkles-BN8lqK5d.js",
+      "_triangle-alert-D3ejZ6c1.js",
+      "_zap-BN29dsjK.js",
+      "_dist-CUIIShIL.js",
+      "_Confetti-BCa29L85.js",
+      "_DtxButton-pz7ulYR4.js"
+    ],
+    "dynamicImports": [
+      "node_modules/qrcode.react/lib/esm/index.js"
+    ]
+  },
+  "src/pages/dtx/DtxLeaderboardPage.tsx": {
+    "file": "assets/DtxLeaderboardPage-BYnjVwTb.js",
+    "name": "DtxLeaderboardPage",
+    "src": "src/pages/dtx/DtxLeaderboardPage.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_createLucideIcon-BITncNkQ.js",
+      "_arrow-left-B_mSi1Yf.js",
+      "_crown-BNVTyifs.js",
+      "_loader-circle-B8dvvsf2.js",
+      "_refresh-cw-COf-A63T.js",
+      "_trophy-Cfk2yUWT.js"
+    ]
+  },
+  "src/pages/dtx/DtxPromotionsPage.tsx": {
+    "file": "assets/DtxPromotionsPage-DFPE4gwd.js",
+    "name": "DtxPromotionsPage",
+    "src": "src/pages/dtx/DtxPromotionsPage.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_createLucideIcon-BITncNkQ.js",
+      "_crown-BNVTyifs.js",
+      "_gift-CiiL1Iwa.js",
+      "_loader-circle-B8dvvsf2.js",
+      "_sparkles-BN8lqK5d.js",
+      "_trophy-Cfk2yUWT.js",
+      "_dist-CUIIShIL.js",
+      "_useCasinoGame-DJ-HpVtR.js",
+      "_shell-BLZ5rdsi.js",
+      "_useDtxBalance-yl2mVrBy.js"
+    ]
+  },
+  "src/pages/dtx/DtxReferPage.tsx": {
+    "file": "assets/DtxReferPage-D3wW_raH.js",
+    "name": "DtxReferPage",
+    "src": "src/pages/dtx/DtxReferPage.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_createLucideIcon-BITncNkQ.js",
+      "_arrow-left-B_mSi1Yf.js",
+      "_bitcoin-CfboraNB.js",
+      "_check-D-GMoPV0.js",
+      "_clock-CFnWIu-H.js",
+      "_coins-B1qp8wP9.js",
+      "_copy-CXLUn6y9.js",
+      "_credit-card-Cnw_rYXB.js",
+      "_dollar-sign-DGs1SHcu.js",
+      "_external-link-DZ2oN5CR.js",
+      "_gift-CiiL1Iwa.js",
+      "_loader-circle-B8dvvsf2.js",
+      "_shield-check-D282WMnl.js",
+      "_smartphone-teEPz0mI.js",
+      "_sparkles-BN8lqK5d.js",
+      "_triangle-alert-D3ejZ6c1.js",
+      "_users-BPo7ZlDe.js",
+      "_wallet-UIYXLjwd.js",
+      "_x-ByikElx-.js",
+      "_dist-CUIIShIL.js",
+      "_useCasinoGame-DJ-HpVtR.js",
+      "_UonoBottomNav-CYjgVpmW.js",
+      "_useDtxBalance-yl2mVrBy.js"
+    ],
+    "dynamicImports": [
+      "node_modules/qrcode.react/lib/esm/index.js"
+    ]
+  },
+  "src/pages/dtx/DtxSettingsPage.tsx": {
+    "file": "assets/DtxSettingsPage-nK67r3ev.js",
+    "name": "DtxSettingsPage",
+    "src": "src/pages/dtx/DtxSettingsPage.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_createLucideIcon-BITncNkQ.js",
+      "_bot-Bwjsy2ZW.js",
+      "_chevron-right-Bo07lTxU.js",
+      "_crown-BNVTyifs.js",
+      "_gift-CiiL1Iwa.js",
+      "_log-out-DWnCo70l.js",
+      "_save-Df_kfQ2i.js",
+      "_shield-check-D282WMnl.js",
+      "_sparkles-BN8lqK5d.js",
+      "_trophy-Cfk2yUWT.js",
+      "_wallet-UIYXLjwd.js",
+      "_useCasinoGame-DJ-HpVtR.js",
+      "_shell-BLZ5rdsi.js",
+      "_useDtxBalance-yl2mVrBy.js"
+    ]
+  },
+  "src/pages/dtx/DtxVipPage.tsx": {
+    "file": "assets/DtxVipPage-BA0999VV.js",
+    "name": "DtxVipPage",
+    "src": "src/pages/dtx/DtxVipPage.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_createLucideIcon-BITncNkQ.js",
+      "_arrow-left-B_mSi1Yf.js",
+      "_crown-BNVTyifs.js",
+      "_gift-CiiL1Iwa.js",
+      "_loader-circle-B8dvvsf2.js",
+      "_zap-BN29dsjK.js"
+    ]
+  },
+  "src/pages/dtx/DtxWithdrawPage.tsx": {
+    "file": "assets/DtxWithdrawPage-CoZyW-ul.js",
+    "name": "DtxWithdrawPage",
+    "src": "src/pages/dtx/DtxWithdrawPage.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_arrow-left-B_mSi1Yf.js",
+      "_ban-C1c_c9Wq.js",
+      "_bitcoin-CfboraNB.js",
+      "_building-2-DWivd_TQ.js",
+      "_circle-check-B1mx9VCo.js",
+      "_circle-x-CvZpIi_U.js",
+      "_clock-CFnWIu-H.js",
+      "_copy-CXLUn6y9.js",
+      "_loader-circle-B8dvvsf2.js",
+      "_mail-B5Dt36Hk.js",
+      "_refresh-cw-COf-A63T.js",
+      "_shield-check-D282WMnl.js",
+      "_smartphone-teEPz0mI.js",
+      "_triangle-alert-D3ejZ6c1.js",
+      "_wallet-UIYXLjwd.js",
+      "_dist-CUIIShIL.js",
+      "_DtxButton-pz7ulYR4.js"
+    ]
+  },
+  "src/pages/dtx/games/AndarBaharPage.tsx": {
+    "file": "assets/AndarBaharPage-BjbWl8sx.js",
+    "name": "AndarBaharPage",
+    "src": "src/pages/dtx/games/AndarBaharPage.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_loader-circle-B8dvvsf2.js",
+      "_GameHeader-DJiNpnNf.js",
+      "_GameHistoryFeed-Ch0Hd2Mi.js"
+    ],
+    "dynamicImports": [
+      "src/games/shared/CardGames.tsx"
+    ]
+  },
+  "src/pages/dtx/games/Aviator2Page.tsx": {
+    "file": "assets/Aviator2Page-hS0pAU6n.js",
+    "name": "Aviator2Page",
+    "src": "src/pages/dtx/games/Aviator2Page.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_loader-circle-B8dvvsf2.js"
+    ],
+    "dynamicImports": [
+      "src/games/shared/CrashBase.tsx"
+    ]
+  },
+  "src/pages/dtx/games/AviatorPage.tsx": {
+    "file": "assets/AviatorPage-BjKVAoCj.js",
+    "name": "AviatorPage",
+    "src": "src/pages/dtx/games/AviatorPage.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_loader-circle-B8dvvsf2.js"
+    ],
+    "dynamicImports": [
+      "src/games/shared/CrashBase.tsx"
+    ]
+  },
+  "src/pages/dtx/games/AviatrixPage.tsx": {
+    "file": "assets/AviatrixPage-Jn1q1lcA.js",
+    "name": "AviatrixPage",
+    "src": "src/pages/dtx/games/AviatrixPage.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_loader-circle-B8dvvsf2.js"
+    ],
+    "dynamicImports": [
+      "src/games/shared/CrashBase.tsx"
+    ]
+  },
+  "src/pages/dtx/games/BaccaratPage.tsx": {
+    "file": "assets/BaccaratPage-Bz16MYjg.js",
+    "name": "BaccaratPage",
+    "src": "src/pages/dtx/games/BaccaratPage.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_loader-circle-B8dvvsf2.js",
+      "_GameHeader-DJiNpnNf.js",
+      "_GameHistoryFeed-Ch0Hd2Mi.js"
+    ],
+    "dynamicImports": [
+      "src/games/shared/CardGames.tsx"
+    ]
+  },
+  "src/pages/dtx/games/BigBassPage.tsx": {
+    "file": "assets/BigBassPage-DoPZ91z2.js",
+    "name": "BigBassPage",
+    "src": "src/pages/dtx/games/BigBassPage.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_loader-circle-B8dvvsf2.js",
+      "_GameHeader-DJiNpnNf.js",
+      "_GameHistoryFeed-Ch0Hd2Mi.js"
+    ],
+    "dynamicImports": [
+      "src/components/casino/SlotsGame.tsx"
+    ]
+  },
+  "src/pages/dtx/games/BlackjackPage.tsx": {
+    "file": "assets/BlackjackPage-jzpA8PSb.js",
+    "name": "BlackjackPage",
+    "src": "src/pages/dtx/games/BlackjackPage.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_loader-circle-B8dvvsf2.js",
+      "_GameHeader-DJiNpnNf.js",
+      "_GameHistoryFeed-Ch0Hd2Mi.js"
+    ],
+    "dynamicImports": [
+      "src/games/shared/CardGames.tsx"
+    ]
+  },
+  "src/pages/dtx/games/BombFishingPage.tsx": {
+    "file": "assets/BombFishingPage-EehCBZkc.js",
+    "name": "BombFishingPage",
+    "src": "src/pages/dtx/games/BombFishingPage.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_FishingBase-BN1tN77l.js"
+    ]
+  },
+  "src/pages/dtx/games/BookOfDeadPage.tsx": {
+    "file": "assets/BookOfDeadPage-wCsvSAS1.js",
+    "name": "BookOfDeadPage",
+    "src": "src/pages/dtx/games/BookOfDeadPage.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_ThemedSlot-BQIHhRTV.js",
+      "_GameHeader-DJiNpnNf.js",
+      "_GameHistoryFeed-Ch0Hd2Mi.js"
+    ]
+  },
+  "src/pages/dtx/games/BuffaloKingPage.tsx": {
+    "file": "assets/BuffaloKingPage-6TtJjG7C.js",
+    "name": "BuffaloKingPage",
+    "src": "src/pages/dtx/games/BuffaloKingPage.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_ThemedSlot-BQIHhRTV.js",
+      "_GameHeader-DJiNpnNf.js",
+      "_GameHistoryFeed-Ch0Hd2Mi.js"
+    ]
+  },
+  "src/pages/dtx/games/CanadoPage.tsx": {
+    "file": "assets/CanadoPage-lPvIDfrd.js",
+    "name": "CanadoPage",
+    "src": "src/pages/dtx/games/CanadoPage.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_loader-circle-B8dvvsf2.js"
+    ],
+    "dynamicImports": [
+      "src/games/shared/CrashBase.tsx"
+    ]
+  },
+  "src/pages/dtx/games/CoinflipPage.tsx": {
+    "file": "assets/CoinflipPage-DP9aM4Ln.js",
+    "name": "CoinflipPage",
+    "src": "src/pages/dtx/games/CoinflipPage.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_loader-circle-B8dvvsf2.js",
+      "_GameHeader-DJiNpnNf.js",
+      "_GameHistoryFeed-Ch0Hd2Mi.js"
+    ],
+    "dynamicImports": [
+      "src/components/casino/CoinflipGame.tsx"
+    ]
+  },
+  "src/pages/dtx/games/ComingSoonPage.tsx": {
+    "file": "assets/ComingSoonPage-Ds-PUthe.js",
+    "name": "ComingSoonPage",
+    "src": "src/pages/dtx/games/ComingSoonPage.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_loader-circle-B8dvvsf2.js",
+      "_sparkles-BN8lqK5d.js",
+      "_dist-CUIIShIL.js",
+      "_GameHeader-DJiNpnNf.js"
+    ]
+  },
+  "src/pages/dtx/games/CrashPage.tsx": {
+    "file": "assets/CrashPage-BzWohdhy.js",
+    "name": "CrashPage",
+    "src": "src/pages/dtx/games/CrashPage.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_loader-circle-B8dvvsf2.js"
+    ],
+    "dynamicImports": [
+      "src/games/shared/CrashBase.tsx"
+    ]
+  },
+  "src/pages/dtx/games/CrazyTimePage.tsx": {
+    "file": "assets/CrazyTimePage-1OsP9Xco.js",
+    "name": "CrazyTimePage",
+    "src": "src/pages/dtx/games/CrazyTimePage.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_loader-circle-B8dvvsf2.js",
+      "_GameHeader-DJiNpnNf.js",
+      "_GameHistoryFeed-Ch0Hd2Mi.js"
+    ],
+    "dynamicImports": [
+      "src/components/casino/RouletteGame.tsx"
+    ]
+  },
+  "src/pages/dtx/games/CricketXPage.tsx": {
+    "file": "assets/CricketXPage-DnqJ3_SD.js",
+    "name": "CricketXPage",
+    "src": "src/pages/dtx/games/CricketXPage.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_loader-circle-B8dvvsf2.js"
+    ],
+    "dynamicImports": [
+      "src/games/shared/CrashBase.tsx"
+    ]
+  },
+  "src/pages/dtx/games/DeepSeaPage.tsx": {
+    "file": "assets/DeepSeaPage-DW0oQO8U.js",
+    "name": "DeepSeaPage",
+    "src": "src/pages/dtx/games/DeepSeaPage.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_FishingBase-BN1tN77l.js"
+    ]
+  },
+  "src/pages/dtx/games/DicePage.tsx": {
+    "file": "assets/DicePage-CYjOYggu.js",
+    "name": "DicePage",
+    "src": "src/pages/dtx/games/DicePage.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_loader-circle-B8dvvsf2.js",
+      "_GameHeader-DJiNpnNf.js",
+      "_GameHistoryFeed-Ch0Hd2Mi.js"
+    ],
+    "dynamicImports": [
+      "src/components/casino/DiceGame.tsx"
+    ]
+  },
+  "src/pages/dtx/games/DragonKingPage.tsx": {
+    "file": "assets/DragonKingPage-2RyCVQqw.js",
+    "name": "DragonKingPage",
+    "src": "src/pages/dtx/games/DragonKingPage.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_FishingBase-BN1tN77l.js"
+    ]
+  },
+  "src/pages/dtx/games/DragonTigerPage.tsx": {
+    "file": "assets/DragonTigerPage-DKFPJtJJ.js",
+    "name": "DragonTigerPage",
+    "src": "src/pages/dtx/games/DragonTigerPage.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_loader-circle-B8dvvsf2.js",
+      "_GameHeader-DJiNpnNf.js",
+      "_GameHistoryFeed-Ch0Hd2Mi.js"
+    ],
+    "dynamicImports": [
+      "src/games/shared/CardGames.tsx"
+    ]
+  },
+  "src/pages/dtx/games/FishHunterPage.tsx": {
+    "file": "assets/FishHunterPage-vcG0Wzyu.js",
+    "name": "FishHunterPage",
+    "src": "src/pages/dtx/games/FishHunterPage.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_FishingBase-BN1tN77l.js"
+    ]
+  },
+  "src/pages/dtx/games/FruitPartyPage.tsx": {
+    "file": "assets/FruitPartyPage-DZzrQ308.js",
+    "name": "FruitPartyPage",
+    "src": "src/pages/dtx/games/FruitPartyPage.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_loader-circle-B8dvvsf2.js",
+      "_GameHeader-DJiNpnNf.js",
+      "_GameHistoryFeed-Ch0Hd2Mi.js"
+    ],
+    "dynamicImports": [
+      "src/components/casino/SlotsGame.tsx"
+    ]
+  },
+  "src/pages/dtx/games/GatesOlympusPage.tsx": {
+    "file": "assets/GatesOlympusPage-Cywk3oUe.js",
+    "name": "GatesOlympusPage",
+    "src": "src/pages/dtx/games/GatesOlympusPage.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_ThemedSlot-BQIHhRTV.js",
+      "_GameHeader-DJiNpnNf.js",
+      "_GameHistoryFeed-Ch0Hd2Mi.js"
+    ]
+  },
+  "src/pages/dtx/games/HappyFishingPage.tsx": {
+    "file": "assets/HappyFishingPage-DK-MkpZB.js",
+    "name": "HappyFishingPage",
+    "src": "src/pages/dtx/games/HappyFishingPage.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_FishingBase-BN1tN77l.js"
+    ]
+  },
+  "src/pages/dtx/games/HiloPage.tsx": {
+    "file": "assets/HiloPage-myJNjKIW.js",
+    "name": "HiloPage",
+    "src": "src/pages/dtx/games/HiloPage.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_loader-circle-B8dvvsf2.js",
+      "_GameHeader-DJiNpnNf.js",
+      "_GameHistoryFeed-Ch0Hd2Mi.js"
+    ],
+    "dynamicImports": [
+      "src/components/casino/HiloGame.tsx"
+    ]
+  },
+  "src/pages/dtx/games/JetXPage.tsx": {
+    "file": "assets/JetXPage-BkrkKKI_.js",
+    "name": "JetXPage",
+    "src": "src/pages/dtx/games/JetXPage.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_loader-circle-B8dvvsf2.js"
+    ],
+    "dynamicImports": [
+      "src/games/shared/CrashBase.tsx"
+    ]
+  },
+  "src/pages/dtx/games/KenoPage.tsx": {
+    "file": "assets/KenoPage-D7P7hPcz.js",
+    "name": "KenoPage",
+    "src": "src/pages/dtx/games/KenoPage.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_loader-circle-B8dvvsf2.js",
+      "_GameHeader-DJiNpnNf.js",
+      "_GameHistoryFeed-Ch0Hd2Mi.js"
+    ],
+    "dynamicImports": [
+      "src/components/casino/KenoGame.tsx"
+    ]
+  },
+  "src/pages/dtx/games/LimboPage.tsx": {
+    "file": "assets/LimboPage-DgpDaHeK.js",
+    "name": "LimboPage",
+    "src": "src/pages/dtx/games/LimboPage.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_loader-circle-B8dvvsf2.js",
+      "_GameHeader-DJiNpnNf.js",
+      "_GameHistoryFeed-Ch0Hd2Mi.js"
+    ],
+    "dynamicImports": [
+      "src/components/casino/LimboGame.tsx"
+    ]
+  },
+  "src/pages/dtx/games/LiveComingSoonPage.tsx": {
+    "file": "assets/LiveComingSoonPage-B79mivvH.js",
+    "name": "LiveComingSoonPage",
+    "src": "src/pages/dtx/games/LiveComingSoonPage.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_loader-circle-B8dvvsf2.js",
+      "_dist-CUIIShIL.js"
+    ]
+  },
+  "src/pages/dtx/games/LiveRoulettePage.tsx": {
+    "file": "assets/LiveRoulettePage-D87QvbVb.js",
+    "name": "LiveRoulettePage",
+    "src": "src/pages/dtx/games/LiveRoulettePage.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_loader-circle-B8dvvsf2.js",
+      "_GameHeader-DJiNpnNf.js",
+      "_GameHistoryFeed-Ch0Hd2Mi.js"
+    ],
+    "dynamicImports": [
+      "src/components/casino/RouletteGame.tsx"
+    ]
+  },
+  "src/pages/dtx/games/LudoPage.tsx": {
+    "file": "assets/LudoPage-BsrcRsE6.js",
+    "name": "LudoPage",
+    "src": "src/pages/dtx/games/LudoPage.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_loader-circle-B8dvvsf2.js",
+      "_GameHeader-DJiNpnNf.js",
+      "_GameHistoryFeed-Ch0Hd2Mi.js"
+    ],
+    "dynamicImports": [
+      "src/components/casino/RouletteGame.tsx"
+    ]
+  },
+  "src/pages/dtx/games/MinesPage.tsx": {
+    "file": "assets/MinesPage-Dd0B-Rsk.js",
+    "name": "MinesPage",
+    "src": "src/pages/dtx/games/MinesPage.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_loader-circle-B8dvvsf2.js",
+      "_GameHeader-DJiNpnNf.js",
+      "_GameHistoryFeed-Ch0Hd2Mi.js"
+    ],
+    "dynamicImports": [
+      "src/components/casino/MinesGame.tsx"
+    ]
+  },
+  "src/pages/dtx/games/MonopolyLivePage.tsx": {
+    "file": "assets/MonopolyLivePage-DyGanoNl.js",
+    "name": "MonopolyLivePage",
+    "src": "src/pages/dtx/games/MonopolyLivePage.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_loader-circle-B8dvvsf2.js",
+      "_GameHeader-DJiNpnNf.js",
+      "_GameHistoryFeed-Ch0Hd2Mi.js"
+    ],
+    "dynamicImports": [
+      "src/components/casino/RouletteGame.tsx"
+    ]
+  },
+  "src/pages/dtx/games/OceanKingPage.tsx": {
+    "file": "assets/OceanKingPage-EnzbgFza.js",
+    "name": "OceanKingPage",
+    "src": "src/pages/dtx/games/OceanKingPage.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_FishingBase-BN1tN77l.js"
+    ]
+  },
+  "src/pages/dtx/games/PlinkoPage.tsx": {
+    "file": "assets/PlinkoPage-prYZdXZu.js",
+    "name": "PlinkoPage",
+    "src": "src/pages/dtx/games/PlinkoPage.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_loader-circle-B8dvvsf2.js",
+      "_GameHeader-DJiNpnNf.js",
+      "_GameHistoryFeed-Ch0Hd2Mi.js"
+    ],
+    "dynamicImports": [
+      "src/components/casino/PlinkoGame.tsx"
+    ]
+  },
+  "src/pages/dtx/games/RummyPage.tsx": {
+    "file": "assets/RummyPage-Cf3NN78R.js",
+    "name": "RummyPage",
+    "src": "src/pages/dtx/games/RummyPage.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_loader-circle-B8dvvsf2.js",
+      "_GameHeader-DJiNpnNf.js",
+      "_GameHistoryFeed-Ch0Hd2Mi.js"
+    ],
+    "dynamicImports": [
+      "src/games/shared/CardGames.tsx"
+    ]
+  },
+  "src/pages/dtx/games/StarburstPage.tsx": {
+    "file": "assets/StarburstPage-CWoipZrM.js",
+    "name": "StarburstPage",
+    "src": "src/pages/dtx/games/StarburstPage.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_ThemedSlot-BQIHhRTV.js",
+      "_GameHeader-DJiNpnNf.js",
+      "_GameHistoryFeed-Ch0Hd2Mi.js"
+    ]
+  },
+  "src/pages/dtx/games/StarlightPage.tsx": {
+    "file": "assets/StarlightPage-BHidJz8e.js",
+    "name": "StarlightPage",
+    "src": "src/pages/dtx/games/StarlightPage.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_loader-circle-B8dvvsf2.js",
+      "_GameHeader-DJiNpnNf.js",
+      "_GameHistoryFeed-Ch0Hd2Mi.js"
+    ],
+    "dynamicImports": [
+      "src/components/casino/SlotsGame.tsx"
+    ]
+  },
+  "src/pages/dtx/games/SweetBonanzaPage.tsx": {
+    "file": "assets/SweetBonanzaPage-DzKt_sAL.js",
+    "name": "SweetBonanzaPage",
+    "src": "src/pages/dtx/games/SweetBonanzaPage.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_ThemedSlot-BQIHhRTV.js",
+      "_GameHeader-DJiNpnNf.js",
+      "_GameHistoryFeed-Ch0Hd2Mi.js"
+    ]
+  },
+  "src/pages/dtx/games/TeenPattiPage.tsx": {
+    "file": "assets/TeenPattiPage-BnxaNVBi.js",
+    "name": "TeenPattiPage",
+    "src": "src/pages/dtx/games/TeenPattiPage.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_loader-circle-B8dvvsf2.js",
+      "_GameHeader-DJiNpnNf.js",
+      "_GameHistoryFeed-Ch0Hd2Mi.js"
+    ],
+    "dynamicImports": [
+      "src/games/shared/CardGames.tsx"
+    ]
+  },
+  "src/pages/dtx/games/UnoGamePage.tsx": {
+    "file": "assets/UnoGamePage-Barfyssp.js",
+    "name": "UnoGamePage",
+    "src": "src/pages/dtx/games/UnoGamePage.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html"
+    ]
+  },
+  "src/pages/dtx/games/UonoSlotWinnerPage.tsx": {
+    "file": "assets/UonoSlotWinnerPage-Bz0WdWO-.js",
+    "name": "UonoSlotWinnerPage",
+    "src": "src/pages/dtx/games/UonoSlotWinnerPage.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_arrow-left-B_mSi1Yf.js",
+      "_loader-circle-B8dvvsf2.js",
+      "_dist-CUIIShIL.js",
+      "_useCasinoGame-DJ-HpVtR.js",
+      "_Confetti-BCa29L85.js",
+      "_DtxButton-pz7ulYR4.js"
+    ]
+  },
+  "src/pages/dtx/games/WheelPage.tsx": {
+    "file": "assets/WheelPage-BSq3ul7F.js",
+    "name": "WheelPage",
+    "src": "src/pages/dtx/games/WheelPage.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_loader-circle-B8dvvsf2.js",
+      "_GameHeader-DJiNpnNf.js",
+      "_GameHistoryFeed-Ch0Hd2Mi.js"
+    ],
+    "dynamicImports": [
+      "src/components/casino/WheelGame.tsx"
+    ]
+  },
+  "src/pages/dtx/games/WildApePage.tsx": {
+    "file": "assets/WildApePage-DFgNTgv2.js",
+    "name": "WildApePage",
+    "src": "src/pages/dtx/games/WildApePage.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_loader-circle-B8dvvsf2.js",
+      "_GameHeader-DJiNpnNf.js",
+      "_GameHistoryFeed-Ch0Hd2Mi.js"
+    ],
+    "dynamicImports": [
+      "src/components/casino/WildApeSlot.tsx"
+    ]
+  },
+  "src/pages/dtx/games/WolfGoldPage.tsx": {
+    "file": "assets/WolfGoldPage-BvOOJMIQ.js",
+    "name": "WolfGoldPage",
+    "src": "src/pages/dtx/games/WolfGoldPage.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_loader-circle-B8dvvsf2.js",
+      "_GameHeader-DJiNpnNf.js",
+      "_GameHistoryFeed-Ch0Hd2Mi.js"
+    ],
+    "dynamicImports": [
+      "src/components/casino/SlotsGame.tsx"
+    ]
+  },
+  "src/pages/dtx/games/ZeppelinPage.tsx": {
+    "file": "assets/ZeppelinPage-DhXKmk1e.js",
+    "name": "ZeppelinPage",
+    "src": "src/pages/dtx/games/ZeppelinPage.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_loader-circle-B8dvvsf2.js"
+    ],
+    "dynamicImports": [
+      "src/games/shared/CrashBase.tsx"
+    ]
+  }
+}

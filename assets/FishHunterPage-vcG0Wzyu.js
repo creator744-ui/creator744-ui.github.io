@@ -1,0 +1,1 @@
+import{p as e}from"./index-p20qvUb_.js";import{t}from"./FishingBase-BN1tN77l.js";var n=e();function r(){return(0,n.jsx)(t,{theme:{name:`Fish Hunter`,icon:`🐠`,themeId:`hunter`,accent:`#06b6d4`,accent2:`#67e8f9`,bg:`linear-gradient(180deg, #042f3a 0%, #0b5466 60%, #03212a 100%)`}})}export{r as default};

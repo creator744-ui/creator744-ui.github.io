@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Hash → path redirect: rewrites /#/foo legacy URLs to /foo for BrowserRouter -->
+    <script>
+      (function () {
+        var h = window.location.hash;
+        if (h && h.length > 1 && h.charAt(1) === '/') {
+          var target = h.slice(1) + window.location.search;
+          window.history.replaceState(null, '', target);
+        }
+      })();
+    </script>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1, user-scalable=no" />
+    <meta name="google-site-verification" content="Tt1TLxXjk3eBRvd3-cSD6HQlmkZAjYu0COsWcUs4-lw" />
+    <style>html,body{background:#0a0514;margin:0;overscroll-behavior:none}</style>
+    <title>C7 Casinos — Premium Crypto Gaming</title>
+    <meta name="description" content="C7 Casinos (Season Casinos) — next-generation crypto casino. Plinko, Mines, Crash, Dice, Wheel, Limbo & Hilo. Real-time, provably fair, instant payouts.">
+    <meta name="keywords" content="C7 Casinos, Season Casinos, crypto casino, provably fair, plinko, mines, crash, dice, wheel, limbo, hilo, USDT">
+    <meta name="author" content="C7 Casinos" />
+    <link rel="canonical" href="https://dreamcoin74.com/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="C7 Casinos" />
+    <meta property="og:url" content="https://dreamcoin74.com/" />
+    <meta property="og:image" content="https://dreamcoin74.com/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://dreamcoin74.com/og-image.jpg" />
+    
+    <!-- Preconnect to font origins for faster LCP. Supabase preconnect is injected at runtime
+         by src/main.tsx using import.meta.env.VITE_SUPABASE_URL so it matches the deployed backend. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+    <!-- Inline @font-face fallback ensures font-display: swap even if Google CSS is blocked -->
+    <style>
+      /* Force swap so headlines paint instantly with system fallback while web fonts load */
+      @font-face { font-family: "Inter"; font-display: swap; src: local("Inter"); }
+      @font-face { font-family: "Space Grotesk"; font-display: swap; src: local("Space Grotesk"); }
+      @font-face { font-family: "Syne"; font-display: swap; src: local("Syne"); }
+      @font-face { font-family: "DM Sans"; font-display: swap; src: local("DM Sans"); }
+    </style>
+    <!-- Preload critical fonts for LCP element to eliminate render delay -->
+    <link rel="preload" as="font" type="font/woff2" href="https://fonts.gstatic.com/s/spacegrotesk/v22/V8mDoQDjQSkFtoMM3T6r8E7mPbF4C_k3HqU.woff2" crossorigin />
+    <link rel="preload" as="font" type="font/woff2" href="https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2" crossorigin />
+    <!-- Load fonts asynchronously to prevent render blocking -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=Syne:wght@600;700;800&family=DM+Sans:wght@300;400;500;600&family=Space+Mono:wght@400;700&family=Rajdhani:wght@500;600;700&family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=Syne:wght@600;700;800&family=DM+Sans:wght@300;400;500;600&family=Space+Mono:wght@400;700&family=Rajdhani:wght@500;600;700&family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet" /></noscript>
+    <meta property="og:title" content="C7 Casinos — Premium Crypto Gaming">
+  <meta name="twitter:title" content="C7 Casinos — Premium Crypto Gaming">
+  <meta property="og:description" content="Plinko, Mines, Crash, Dice, Wheel, Limbo & Hilo. Real-time, provably fair, instant payouts.">
+  <meta name="twitter:description" content="Plinko, Mines, Crash, Dice, Wheel, Limbo & Hilo. Real-time, provably fair, instant payouts.">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+  <!-- PWA -->
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#ff6b35">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="DreamX Casino">
+  <link rel="apple-touch-icon" href="/icon-192.png">
+
+  <!-- PayPal Web SDK v6 (core) — components loaded on demand via createInstance -->
+
+  <!-- Structured data: Organization + WebSite -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://dreamcoin74.com/#organization",
+        "name": "C7 Casinos",
+        "alternateName": "Season Casinos",
+        "url": "https://dreamcoin74.com/",
+        "logo": "https://storage.googleapis.com/gpt-engineer-file-uploads/FVhwoWE9NNhLSJmTeQevm93lgkZ2/uploads/1762193241978-logo.png"
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://dreamcoin74.com/#website",
+        "url": "https://dreamcoin74.com/",
+        "name": "C7 Casinos",
+        "description": "Premium crypto casino — provably fair Plinko, Mines, Crash, Dice, Wheel, Limbo & Hilo with instant payouts.",
+        "publisher": { "@id": "https://dreamcoin74.com/#organization" }
+      }
+    ]
+  }
+  </script>
+  <script type="module" crossorigin src="/assets/index-p20qvUb_.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-DxDlGV52.css">
+</head>
+
+  <body>
+    <div id="root"></div>
+    <script>
+      // Register C7Winner service worker (PWA) — gracefully no-op if unsupported
+      if ('serviceWorker' in navigator && location.protocol === 'https:') {
+        window.addEventListener('load', function () {
+          navigator.serviceWorker
+            .register('/sw.js', { scope: '/' })
+            .then(function (reg) {
+              // When a new SW is found, prompt update on next navigation
+              reg.addEventListener('updatefound', function () {
+                var nw = reg.installing;
+                if (!nw) return;
+                nw.addEventListener('statechange', function () {
+                  if (nw.state === 'installed' && navigator.serviceWorker.controller) {
+                    // New version available — apply on next page load
+                    console.info('[C7] Update ready, will activate on reload.');
+                  }
+                });
+              });
+            })
+            .catch(function () { /* SW failed to register — silent */ });
+        });
+      }
+    </script>
+  </body>
+</html>
