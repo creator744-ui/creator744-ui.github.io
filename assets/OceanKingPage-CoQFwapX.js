@@ -1,0 +1,1 @@
+import{U as e}from"./vendor-radix-Ba6QWFpM.js";import{t}from"./FishingBase-B00P8Pl1.js";var n=e();function r(){return(0,n.jsx)(t,{theme:{name:`Ocean King`,icon:`🌊`,themeId:`ocean-king`,accent:`#0284c7`,accent2:`#22d3ee`,bg:`linear-gradient(180deg, #001f3f 0%, #013a63 60%, #001428 100%)`}})}export{r as default};

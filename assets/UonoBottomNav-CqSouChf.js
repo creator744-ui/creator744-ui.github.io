@@ -1,0 +1,1 @@
+import{U as e}from"./vendor-radix-Ba6QWFpM.js";import{t}from"./CartoonBottomNav-85wilsXd.js";var n=e();function r(){return(0,n.jsx)(t,{})}export{r as t};

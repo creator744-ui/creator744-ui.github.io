@@ -1,0 +1,1 @@
+import{U as e}from"./vendor-radix-Ba6QWFpM.js";import{t}from"./FishingBase-B00P8Pl1.js";var n=e();function r(){return(0,n.jsx)(t,{theme:{name:`Deep Sea`,icon:`🦈`,themeId:`deep-sea`,accent:`#1e40af`,accent2:`#3b82f6`,bg:`linear-gradient(180deg, #050b2a 0%, #0c1a4d 60%, #02061a 100%)`}})}export{r as default};

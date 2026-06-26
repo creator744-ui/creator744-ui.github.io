@@ -1,0 +1,1 @@
+import{U as e}from"./vendor-radix-Ba6QWFpM.js";import{t}from"./FishingBase-B00P8Pl1.js";var n=e();function r(){return(0,n.jsx)(t,{theme:{name:`Dragon King`,icon:`🐉`,themeId:`dragon-king`,accent:`#f97316`,accent2:`#facc15`,bg:`linear-gradient(180deg, #2a1408 0%, #4d2811 60%, #1a0a04 100%)`}})}export{r as default};
