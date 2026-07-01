@@ -1,0 +1,1 @@
+import{l as e}from"./index-DsGzpRzl.js";async function t(t,n){let r=sessionStorage.getItem(`dtx_admin_auth`)??``;return e.functions.invoke(t,{body:n,headers:r?{"x-admin-pin-session":r}:void 0})}function n(e){return t(`admin-casino`,e)}export{n,t};
